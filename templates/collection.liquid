@@ -1,0 +1,9 @@
+<div class="py-12">
+    <div class="container">
+        <h1 class="text-6xl mb-6">{{- collection.title | escape -}}</h1>
+
+        {%- if collection.description -%}
+            <div class="collection-hero__description rte">{{ collection.description }}</div>
+        {%- endif -%}
+    </div>
+</div>

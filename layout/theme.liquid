@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" class="overflow-y-scroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="theme-color" content="">
+        <link rel="canonical" href="{{ canonical_url }}">
+
+        <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+        <link rel="preload" href="{{ 'bundle.css' | asset_url }}" as="style">
+        <link rel="preload" href="{{ 'bundle.js' | asset_url }}" as="script">
+
+        <title>
+        {{ page_title }}
+        {%- if current_tags %}
+          &ndash; tagged "{{ current_tags | join: ', ' }}
+          "{% endif -%}
+        {%- if current_page != 1 %}
+          &ndash; Page
+          {{ current_page }}
+        {% endif -%}
+        {%- unless page_title contains shop.name %}
+          &ndash;
+          {{ shop.name }}
+        {% endunless -%}
+      </title>
+
+        {% if page_description %}
+          <meta name="description" content="{{ page_description | escape }}">
+        {% endif %}
+        {% render 'meta-tags' %}
+
+        {% if canonical_url != blank %}
+          <link rel="canonical" href="{{ canonical_url }}">
+        {% endif %}
+
+        <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon"/>
+         <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+        {{ 'bundle.css' | asset_url | stylesheet_tag }}
+
+        <script>
+          window.theme = window.theme || {};
+          theme.settings = {
+            dynamicVariantsEnable: true,
+            template: '{{ template.name | handle }}',
+            isCustomerTemplate:{% if request.page_type contains 'customers/' %}true
+            {% else %}
+              false
+            {% endif %},
+            moneyFormat: {{ shop.money_format | json }},
+            themeName: 'Baudville',
+            themeVersion: "1.0.0"
+          };
+          window.shopUrl = '{{ shop.url }}';
+          window.routes = {
+            cart_add_url: '{{ routes.cart_add_url }}',
+            cart_change_url: '{{ routes.cart_change_url }}',
+            cart_update_url: '{{ routes.cart_update_url }}',
+            predictive_search_url: '{{ routes.predictive_search_url }}'
+          };
+        </script>
+        {{ content_for_header }}
+
+
+    </head>
+    {%- capture body_classess -%}
+      template-{{ template.name | handle }} {{ template.name | handle }}-{{ template.suffix | default: 'home' }} {% if cart.item_count == 0 %}cart-empty {% endif %}
+    {%- endcapture -%}
+    <body  class="{{ body_classess }} min-h-screen">
+      {% if request.page_type == 'captcha' %}
+      {% comment %}
+        fix: Shopify automatically inserts script tags on captcha pages into the content_for_layout tag
+        but vue removes any script tags on mount, so don't initialize the vue instance on captcha pages
+      {% endcomment %}
+      {% render 'template-captcha' %}
+      {% else %}
+        <div id="app" class="flex flex-col min-h-screen font-sans">
+          {% render 'header' %}
+          <main
+          id="main"
+          role="main"
+          class="flex-1 pt-8 {% if request.page_type == 'index' %}md:pt-12{% else %}md:pt-20 pb-16 md:pb-32{% endif %}"
+        >
+          {{ content_for_layout }}
+        </main>
+          {% render 'footer' %}
+        </div>
+      {% endif %}
+         <!-- webpack bundle -->
+    <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
+    </body>
+</html>

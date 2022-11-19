@@ -79,7 +79,7 @@
       {% render 'template-captcha' %}
       {% else %}
         <div id="app" class="flex flex-col min-h-screen font-sans">
-          {% render 'header' %}
+          {% section 'header' %}
           <main
           id="main"
           role="main"
@@ -87,7 +87,7 @@
         >
           {{ content_for_layout }}
         </main>
-          {% render 'footer' %}
+          {% section 'footer' %}
         </div>
       {% endif %}
          <!-- webpack bundle -->

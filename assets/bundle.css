@@ -21,7 +21,7 @@
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #edf2f7; /* 2 */
+  border-color: #e4e5e5; /* 2 */
 }
 ::before,
 ::after {
@@ -451,6 +451,18 @@ video {
 .relative {
   position: relative;
 }
+.left-2\/4 {
+  left: 50%;
+}
+.top-2\/4 {
+  top: 50%;
+}
+.-top-2 {
+  top: -0.5rem;
+}
+.-right-2 {
+  right: -0.5rem;
+}
 .top-0 {
   top: 0px;
 }
@@ -469,6 +481,10 @@ video {
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -496,6 +512,9 @@ video {
 }
 .mr-1 {
   margin-right: 0.25rem;
+}
+.mr-3 {
+  margin-right: 0.75rem;
 }
 .mb-3 {
   margin-bottom: 0.75rem;
@@ -653,6 +672,17 @@ video {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.-translate-x-2\/4 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-2\/4 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -751,12 +781,12 @@ video {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
-.rounded-l {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.rounded-l {
+  border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
 .border {
@@ -765,23 +795,30 @@ video {
 .border-b-2 {
   border-bottom-width: 2px;
 }
+.border-l {
+  border-left-width: 1px;
+}
 .border-t {
   border-top-width: 1px;
 }
 .border-b {
   border-bottom-width: 1px;
 }
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(237 242 247 / var(--tw-border-opacity));
-}
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(228 229 229 / var(--tw-border-opacity));
+}
+.border-l-gray-200 {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(228 229 229 / var(--tw-border-opacity));
+}
 .bg-gray-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(237 242 247 / var(--tw-bg-opacity));
+  background-color: rgb(228 229 229 / var(--tw-bg-opacity));
 }
 .bg-transparent {
   background-color: transparent;
@@ -789,6 +826,10 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-red-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 112 94 / var(--tw-bg-opacity));
 }
 .bg-black {
   --tw-bg-opacity: 1;
@@ -950,6 +991,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(74 85 104 / var(--tw-text-opacity));
 }
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(106 116 124 / var(--tw-text-opacity));
+}
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(189 189 189 / var(--tw-text-opacity));
@@ -990,10 +1035,6 @@ body {
 }
 body a {
   color: #6fae9f;
-}
-body .container {
-  margin: 0 auto;
-  max-width: 1200px;
 }
 h1,
 h2,
@@ -1115,6 +1156,28 @@ a {
 .dropdown .dropdown-menu {
   box-shadow: 1px 1px 5px -1px rgba(106, 116, 124, 0.25);
   min-width: 120px;
+}
+/* cart icons */
+.svg-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  transition: fill 0.3s ease;
+}
+.svg-icon--page-header-cart {
+  width: 28px;
+  height: 28px;
+}
+.svg-icon--secondary-color {
+  fill: #6eae9f;
+}
+.page-header__cart-count {
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  line-height: 16px;
+  border-radius: 50%;
 }
 .hover\:text-gray-400:hover {
   --tw-text-opacity: 1;

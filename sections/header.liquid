@@ -2,16 +2,21 @@
   <div class="container">
     <div class="flex items-center -mx-4">
       <div class="w-3/12 px-4">
-        <a href="" class="flex text-white">
-          {% render 'icon-phone' %}
-
-          1-800-728-0888
-        </a>
+        {%- if section.settings.phone != blank -%}
+          <a href="tel:{{ section.settings.phone }}" class="flex text-white">
+            {% render 'icon-phone' %}
+            {{ section.settings.phone }}
+          </a>
+        {%- endif -%}
       </div>
-      <div class="w-6/12 px-4 py-2 text-center">
-        <p>It's never too early to start crossing gifts off your list!</p>
-        <a class="underline uppercase" href="https://www.baudville.com/categories/holiday-gifts-shop-all-holiday">SHOP HOLIDAY</a>
-      </div>
+      {% if section.settings.announcement != blank -%}
+        <div class="w-6/12 px-4 py-2 text-center">
+          <p>{{ section.settings.announcement | escape }}</p>
+          {%- if section.settings.menu_title != blank -%}
+            <a class="underline uppercase" href="{{ section.settings.menu | defualt: '#' }}">{{ section.settings.menu_title | escape }}</a>
+          {%- endif -%}
+        </div>
+      {% endif %}
 
       <div class="w-3/12 px-4 text-right">
         <ul class="flex justify-end header-top-menu">
@@ -29,7 +34,7 @@
     <div class="flex items-center -mx-4">
       <div class="w-3/12 px-4">
         <a href="{{ shop.url }}">
-          <img width="170" src="{{ 'logo.static.png' | asset_url }}" alt="">
+          <img width="170" src="{{ section.settings.logo | image_url }}" loading="lazy" alt="">
         </a>
       </div>
       <div class="w-6/12 px-4">
@@ -47,12 +52,12 @@
       <div class="w-3/12 px-4">
         <div class="flex items-center justify-end">
           <div class="relative inline-block w-2/4 dropdown">
-            <button class="inline-flex items-center px-4 py-2 text-xs font-semibold text-gray-700">
+            <button class="inline-flex items-center px-4 py-2 text-xs font-semibold text-gray-100 underline">
               <span class="mr-1">My Account</span>
               <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
               </svg>
             </button>
-            <ul class="absolute hidden pt-1 text-gray-700 bg-white dropdown-menu">
+            <ul class="absolute hidden pt-1 text-gray-100 bg-white dropdown-menu">
               {%- if customer -%}
                 <li class="">
                   <a class="block px-4 py-2 text-xs whitespace-no-wrap rounded-t hover:text-gray-400" href="{{ routes.account_url }}">My Account</a>
@@ -92,24 +97,168 @@
   </div>
 </div>
 
-<div class="py-3 shadow-lg">
-  <div class="container">
-    <ul class="flex justify-between text-xl uppercase main-menu">
-      <li>
-        <a href="">Awards</a>
-      </li>
-      <li>
-        <a href="">Everyday Gifts</a>
-      </li>
-      <li>
-        <a href="">Delightly Curated Kits</a>
-      </li>
-      <li>
-        <a href="">Branded Gifts + Swag</a>
-      </li>
-      <li>
-        <a href="">Clearance</a>
-      </li>
-    </ul>
+{% if section.blocks.size > 0 %}
+  <div class="shadow-lg ">
+    <div class="container">
+      <ul class="flex justify-between text-xl uppercase main-menu">
+        {%- for block in section.blocks -%}
+          {% if block.settings.title != blank %}
+            <li class="static mega-menu-items">
+              <a class="inline-block p-3 text-gray-100 hover:text-green-100" href="{{ block.settings.menu }}">
+                {{ block.settings.title | escape }}
+              </a>
+              {%- if block.settings.show_submenu != blank -%}
+                {% render 'megamenu' bs: block.settings %}
+              {%- endif -%}
+            </li>
+          {% endif %}
+        {%- endfor -%}
+      </ul>
+    </div>
   </div>
-</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Header",
+    "class": "section-header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Top bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Enable topbar?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "phone",
+        "label": "Phone Number",
+        "default": "1-800-728-0888"
+      },
+      {
+        "type": "text",
+        "id": "announcement",
+        "default": "It's never too early to start crossing gifts off your list!",
+        "label": "Announcement Text"
+      }, {
+        "type": "text",
+        "id": "menu_title",
+        "label": "Heading",
+        "default": "SHOP HOLIDAY"
+      }, {
+        "type": "url",
+        "id": "menu",
+        "label": "Announcement LINK"
+      }, {
+        "type": "link_list",
+        "id": "top-menu",
+        "label": "Topbar Menu"
+      }, {
+        "type": "header",
+        "content": "Header Settings"
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Links"
+          },
+          {
+            "type": "url",
+            "id": "menu",
+            "label": "Menu LINK:"
+          },
+          {
+            "type": "header",
+            "content": "Select Submenu"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_submenu",
+            "label": "Enable Submenu"
+          }, {
+            "type": "link_list",
+            "id": "menu_1",
+            "label": "Menu"
+          }, {
+            "type": "header",
+            "content": "Select Submenu Image (Max 4)"
+          }, {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "Image:"
+          }, {
+            "type": "text",
+            "id": "image_title1",
+            "label": "Image Title",
+            "default": "New Releases"
+          }, {
+            "type": "url",
+            "id": "image_link1",
+            "label": "LINK:"
+          }, {
+            "type": "header",
+            "content": "Select Submenu Image"
+          }, {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image:"
+          }, {
+            "type": "text",
+            "id": "image_title2",
+            "label": "Image Title",
+            "default": "New Releases"
+          }, {
+            "type": "url",
+            "id": "image_link2",
+            "label": "LINK:"
+          }, {
+            "type": "header",
+            "content": "Select Submenu Image"
+          }, {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Image:"
+          }, {
+            "type": "text",
+            "id": "image_title3",
+            "label": "Image Title"
+          }, {
+            "type": "url",
+            "id": "image_link3",
+            "label": "LINK:"
+          }, {
+            "type": "header",
+            "content": "Select Submenu Image 4"
+          }, {
+            "type": "image_picker",
+            "id": "image4",
+            "label": "Image:"
+          }, {
+            "type": "text",
+            "id": "image_title4",
+            "label": "Image Title"
+          }, {
+            "type": "url",
+            "id": "image_link4",
+            "label": "LINK:"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

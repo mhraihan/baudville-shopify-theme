@@ -1,0 +1,48 @@
+<div class="container absolute z-50 hidden w-full py-10 text-left -translate-x-1/2 translate-y-0 bg-white rounded primary-nav__content left-2/4">
+  <div class="flex w-full px-4 py-0 mx-auto primary-nav__content-wrapper">
+    {% capture menu %}menu_1{% endcapture %}
+    {% assign width = 'w-full' %}
+    {%- assign justify = 'justify-between' -%}
+    {% if bs[menu] != blank %}
+      {% assign width = 'w-8/12' %}
+      {%- assign justify = 'justify-end' -%}
+      <div class="flex-auto w-4/12 menu-content-block">
+        <ul class="w-full taxonomy-content-block__menu gap-x-6 columns-2">
+          {% for link in linklists[bs[menu]].links %}
+            <li class="normal-case menu-item">
+              <a class="inline-block py-2 text-sm font-semibold leading-normal text-gray-100 hover:text-green-100" href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    <div class="flex {{ justify }} flex-auto {{ width }} menu-content-block">
+      {%- for i in (1..4) -%}
+        {% capture image_title %}image_title{{ i }}{% endcapture %}
+        {% capture image_link %}image_link{{ i }}{% endcapture %}
+        {% capture image %}image{{ i }}{% endcapture %}
+        {% if bs[image] != blank %}
+          <div class="nav-content-block {% unless forloop.first %} pl-5 {% endunless %}">
+            <div class="nav-content-block__image-container">
+              <!-- Image & URL -->
+              <a href="{{ bs[image_link] | default: '#'}}" aria-label="{{ bs[image_title] }}">
+                <img alt="" class="nav-content-block__image" role="presentation" src=" {{ bs[image] | image_url }}" alt="{{ bs[image_title] }}">
+              </a>
+            </div>
+            {%- if  bs[image_title] !=blank -%}
+              <div class="border-t-2 nav-content-block__button border-t-white">
+                <!-- Text Banner & URL -->
+
+                <a class="block w-full p-2 text-xl tracking-wide text-center text-white border-none button button--full button--nav-content-block bg-green-50" href="{{ bs[image_link] | default: '#'}}">
+                  {{ bs[image_title] }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

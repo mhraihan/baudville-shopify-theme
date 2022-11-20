@@ -1,3 +1,129 @@
 {
-  "current": {}
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "2ea04d8f-0897-44f7-95ad-da4ce0d5e2fc": {
+            "type": "menu",
+            "settings": {
+              "title": "Awards",
+              "menu": "",
+              "show_submenu": true,
+              "menu_1": "awards",
+              "image1": "shopify://shop_images/file.jpg",
+              "image_title1": "Shop All Awards",
+              "image_link1": "shopify://products/led-high-tops",
+              "image2": "shopify://shop_images/file-_1.jpg",
+              "image_title2": "Contact us For Your Custom Trophy",
+              "image_link2": "shopify://products/floral-white-top",
+              "image_title3": "",
+              "image_link3": "",
+              "image_title4": "",
+              "image_link4": ""
+            }
+          },
+          "81c635ef-dcf9-42b9-83b4-904ca1060f68": {
+            "type": "menu",
+            "settings": {
+              "title": "Everyday Gifts",
+              "menu": "shopify://products/zipped-jacket",
+              "show_submenu": true,
+              "menu_1": "everyday-gifts",
+              "image1": "shopify://shop_images/file_2.jpg",
+              "image_title1": "Shop Holiday",
+              "image_link1": "shopify://products/longsleeve-cotton-top",
+              "image2": "shopify://shop_images/file_3.jpg",
+              "image_title2": "Shop New Arrivals",
+              "image_link2": "shopify://products/dark-denim-top",
+              "image_title3": "",
+              "image_link3": "",
+              "image_title4": "",
+              "image_link4": ""
+            }
+          },
+          "30fea50a-0a51-428e-b55a-08656e9ea755": {
+            "type": "menu",
+            "settings": {
+              "title": "Delightly Curated Kits",
+              "menu": "shopify://products/black-leather-bag",
+              "show_submenu": true,
+              "menu_1": "",
+              "image1": "shopify://shop_images/file_4.jpg",
+              "image_title1": "",
+              "image_link1": "shopify://products/dark-denim-top",
+              "image2": "shopify://shop_images/Delightly-Category-Page-updatesPersonalize-Kits.png",
+              "image_title2": "",
+              "image_link2": "shopify://products/floral-white-top",
+              "image3": "shopify://shop_images/Delightly-Category-Page-updatesDlite.png",
+              "image_title3": "",
+              "image_link3": "",
+              "image4": "shopify://shop_images/file_5.jpg",
+              "image_title4": "",
+              "image_link4": "shopify://collections"
+            }
+          },
+          "95a94291-f43f-453d-a6ba-d1ceb12b044f": {
+            "type": "menu",
+            "settings": {
+              "title": "Branded Gifts + Swag",
+              "menu": "shopify://collections",
+              "show_submenu": true,
+              "menu_1": "branded-gifts-swag",
+              "image1": "shopify://shop_images/file-_7.jpg",
+              "image_title1": "Shop All Promo",
+              "image_link1": "shopify://products/led-high-tops",
+              "image2": "shopify://shop_images/modify.jpg",
+              "image_title2": "Custom Promo Quote",
+              "image_link2": "shopify://products/led-high-tops",
+              "image_title3": "",
+              "image_link3": "",
+              "image_title4": "",
+              "image_link4": ""
+            }
+          },
+          "459b2583-8033-4725-9036-e14239489d0f": {
+            "type": "menu",
+            "settings": {
+              "title": "Holidays",
+              "menu": "shopify://collections",
+              "show_submenu": true,
+              "menu_1": "holiday",
+              "image1": "shopify://shop_images/file_5735685b-464f-4468-b203-ed112b4f8c61.jpg",
+              "image_title1": "Shop Drinkware",
+              "image_link1": "shopify://products/yellow-wool-jumper",
+              "image2": "shopify://shop_images/file_1.jpg",
+              "image_title2": "Shop Edible Gifts",
+              "image_link2": "shopify://products/ocean-blue-shirt",
+              "image_title3": "",
+              "image_link3": "",
+              "image_title4": "",
+              "image_link4": ""
+            }
+          }
+        },
+        "block_order": [
+          "2ea04d8f-0897-44f7-95ad-da4ce0d5e2fc",
+          "81c635ef-dcf9-42b9-83b4-904ca1060f68",
+          "30fea50a-0a51-428e-b55a-08656e9ea755",
+          "95a94291-f43f-453d-a6ba-d1ceb12b044f",
+          "459b2583-8033-4725-9036-e14239489d0f"
+        ],
+        "settings": {
+          "show": true,
+          "phone": "1-800-728-0888",
+          "announcement": "It's never too early to start crossing gifts off your list!",
+          "menu_title": "SHOP HOLIDAY",
+          "menu": "",
+          "top-menu": "",
+          "logo": "shopify://shop_images/logo_holiday-fdda46cab4c5912a3efa8d1e707a99254d145f314289bc067217581a00c6eeae.png"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
 }

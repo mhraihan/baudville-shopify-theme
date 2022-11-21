@@ -39,7 +39,7 @@
         "b07d5ce6-61c9-42a8-80c0-9154f406a5bd"
       ],
       "settings": {
-        "row": "w-1/2",
+        "autoplay": false,
         "py": 0
       }
     },
@@ -79,6 +79,49 @@
         "image": "shopify://shop_images/trusted-by.static.jpg",
         "button-url": "shopify://products/classic-varsity-top",
         "py": 10
+      }
+    },
+    "827f40c0-421e-4fdf-a914-f192ed25857d": {
+      "type": "brand-slider",
+      "blocks": {
+        "template--17009108123944__827f40c0-421e-4fdf-a914-f192ed25857d-1669048736a1f6438b-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_14.jpg",
+            "url": ""
+          }
+        },
+        "template--17009108123944__827f40c0-421e-4fdf-a914-f192ed25857d-1669048736a1f6438b-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_15.jpg",
+            "url": ""
+          }
+        },
+        "b51718cf-f1e5-4e4d-b9e0-fccba0a21609": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_b692db26-be7d-4123-95b4-2a7ee0e6c23d.jpg",
+            "url": ""
+          }
+        },
+        "5487ed4e-02bb-4808-ada2-e21a385d1865": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_10_e3813e77-e2d0-4aa0-8dd7-76a8eb0c8c24.jpg",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17009108123944__827f40c0-421e-4fdf-a914-f192ed25857d-1669048736a1f6438b-0",
+        "template--17009108123944__827f40c0-421e-4fdf-a914-f192ed25857d-1669048736a1f6438b-1",
+        "b51718cf-f1e5-4e4d-b9e0-fccba0a21609",
+        "5487ed4e-02bb-4808-ada2-e21a385d1865"
+      ],
+      "settings": {
+        "pt": 0,
+        "pb": 10
       }
     },
     "71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051": {
@@ -123,6 +166,7 @@
     "90ea9c29-2bae-427c-a4f6-9ba440994e0d",
     "2ddf408e-0f50-421d-9146-0efb37445748",
     "ee0a60a2-a5d3-40a1-a8ba-23df34f94aee",
+    "827f40c0-421e-4fdf-a914-f192ed25857d",
     "71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051",
     "60fe4726-3764-47a5-a058-5d059d251bce"
   ]

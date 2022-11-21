@@ -1,0 +1,39 @@
+<div class="promo-section">
+  <div class="py-{{ section.settings.py }} text-center bg-pink-50 text-pink-100">
+    <div class="container">
+      {{ section.settings.text }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Promo Text",
+    "class": "mh-promo-section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Promo Text",
+        "default": "<p> <strong>Appreciated Employees Are Engaged Employees</strong>\u000a        – Show meaningful value and fuel them to be their best.</p>"
+      }, {
+        "type": "header",
+        "content": "Adjust padding"
+      }, {
+        "type": "range",
+        "label": "Padding Top/Botom",
+        "id": "py",
+        "min": 0,
+        "max": 96,
+        "step": 1,
+        "default": 4
+      }
+    ],
+    "presets": [
+      {
+        "name": "Promo Text",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

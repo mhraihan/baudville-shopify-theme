@@ -1,4 +1,94 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "cfd18cd4-4ea2-409d-9f23-03d1999e4ef7": {
+      "type": "section-banner",
+      "settings": {
+        "image": "shopify://shop_images/banner.static.jpg",
+        "button-url": "shopify://collections/shop-all-awards",
+        "py": 0
+      }
+    },
+    "3c68bc53-60e6-401a-911e-c9681d587b8a": {
+      "type": "promo",
+      "settings": {
+        "text": "<p> <strong>Appreciated Employees Are Engaged Employees</strong> – Show meaningful value and fuel them to be their best.</p>",
+        "py": 4
+      }
+    },
+    "65f3f99e-225f-4f4a-8fc5-f3b8bc02fe72": {
+      "type": "richtext",
+      "settings": {
+        "title": "Celebrate The Moments That Matter",
+        "text": "<p>Finding the right gift to boost employee engagement is more important than ever. From celebratory <a href=\"/products/chequered-red-shirt\" title=\"Chequered Red Shirt\">drinkware </a>to <a href=\"/products/navy-sport-jacket\" title=\"Navy Sports Jacket\">appreciation plant cubes</a>, statement making awards, and our stunning selection of Delightly kits, we are here to help you find what you need. Retain great talent by choosing from hundreds of gifts you can leave at their workspace or send straight to their doorstep.</p>",
+        "py": 10
+      }
+    },
+    "90ea9c29-2bae-427c-a4f6-9ba440994e0d": {
+      "type": "section-collection",
+      "settings": {
+        "title": "Shop Our Latest Products",
+        "collection_featured": "shop-all-awards"
+      }
+    },
+    "2ddf408e-0f50-421d-9146-0efb37445748": {
+      "type": "section-banner",
+      "settings": {
+        "image": "shopify://shop_images/cta-big.static.jpg",
+        "button-url": "shopify://products/striped-silk-blouse",
+        "py": 0
+      }
+    },
+    "ee0a60a2-a5d3-40a1-a8ba-23df34f94aee": {
+      "type": "section-banner",
+      "settings": {
+        "image": "shopify://shop_images/trusted-by.static.jpg",
+        "button-url": "shopify://products/classic-varsity-top",
+        "py": 10
+      }
+    },
+    "71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051": {
+      "type": "section-hero",
+      "blocks": {
+        "template--17009108123944__71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051-1669006612217608da-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cta-1.static.jpg",
+            "url": "shopify://products/led-high-tops"
+          }
+        },
+        "template--17009108123944__71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051-1669006612217608da-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cta-2.static.jpg",
+            "url": "shopify://collections/shop-all-awards"
+          }
+        }
+      },
+      "block_order": [
+        "template--17009108123944__71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051-1669006612217608da-0",
+        "template--17009108123944__71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051-1669006612217608da-1"
+      ],
+      "settings": {
+        "row": "w-1/2",
+        "py": 0
+      }
+    },
+    "60fe4726-3764-47a5-a058-5d059d251bce": {
+      "type": "review",
+      "settings": {
+        "title": "Customer Reviews",
+        "py": 10
+      }
+    }
+  },
+  "order": [
+    "cfd18cd4-4ea2-409d-9f23-03d1999e4ef7",
+    "3c68bc53-60e6-401a-911e-c9681d587b8a",
+    "65f3f99e-225f-4f4a-8fc5-f3b8bc02fe72",
+    "90ea9c29-2bae-427c-a4f6-9ba440994e0d",
+    "2ddf408e-0f50-421d-9146-0efb37445748",
+    "ee0a60a2-a5d3-40a1-a8ba-23df34f94aee",
+    "71d86dc4-8afd-41ec-b5f8-ccf7fb5ba051",
+    "60fe4726-3764-47a5-a058-5d059d251bce"
+  ]
 }

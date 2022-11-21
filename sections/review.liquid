@@ -1,0 +1,52 @@
+<div class="trustpilot-section">
+  <div class="py-{{ section.settings.py }}">
+    <div class="container">
+      {% if section.settings.title != blank %}
+        <h3 class="text-5xl text-center text-green-100">
+          {{ section.settings.title }}
+        </h3>
+      {% endif %}
+      <div class="html-content-block">
+        <!-- TrustBox widget - Slider -->
+        <div class="trustpilot-widget" data-locale="en-US" data-template-id="54ad5defc6454f065c28af8b" data-businessunit-id="593eff810000ff0005a46e0a" data-style-height="220px" data-style-width="100%" data-theme="light" data-stars="5" style="position: relative;">
+          <iframe title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/54ad5defc6454f065c28af8b/index.html?templateId=54ad5defc6454f065c28af8b&amp;businessunitId=593eff810000ff0005a46e0a#locale=en-US&amp;styleHeight=220px&amp;styleWidth=100%25&amp;theme=light&amp;stars=5" style="position: relative; height: 220px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe>
+        </div>
+        <!-- End TrustBox widget -->
+
+        <script type="text/javascript" id="" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Trustpilot Review",
+    "class": "mh-review-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Customer Reviews"
+      }, {
+        "type": "header",
+        "content": "Adjust padding"
+      }, {
+        "type": "range",
+        "label": "Padding Top/Botom",
+        "id": "py",
+        "min": 0,
+        "max": 96,
+        "step": 1,
+        "default": 10
+      }
+    ],
+    "presets": [
+      {
+        "name": "Trustpilot Review",
+        "category": "Review"
+      }
+    ]
+  }
+{% endschema %}

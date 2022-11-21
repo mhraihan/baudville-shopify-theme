@@ -946,8 +946,8 @@ video {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-.pt-8 {
-  padding-top: 2rem;
+.pt-0 {
+  padding-top: 0px;
 }
 .pb-16 {
   padding-bottom: 4rem;
@@ -978,9 +978,6 @@ video {
 }
 .pl-5 {
   padding-left: 1.25rem;
-}
-.pt-0 {
-  padding-top: 0px;
 }
 .text-left {
   text-align: left;
@@ -1308,6 +1305,11 @@ li.mega-menu-items:hover .primary-nav__content, li.mega-menu-items:focus .primar
 img.nav-content-block__image {
   border-radius: 4px 4px 0 0;
 }
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 30px;
+  color: #6a747c;
+}
 .richtext-section h2 {
   font-family: "Playfair Display", serif;
 }
@@ -1413,17 +1415,11 @@ img.nav-content-block__image {
   .md\:pb-32 {
     padding-bottom: 8rem;
   }
-  .md\:pt-12 {
-    padding-top: 3rem;
-  }
-  .md\:pt-20 {
-    padding-top: 5rem;
+  .md\:pt-0 {
+    padding-top: 0px;
   }
   .md\:pt-32 {
     padding-top: 8rem;
-  }
-  .md\:pt-0 {
-    padding-top: 0px;
   }
   .md\:text-3xl {
     font-size: 1.875rem;

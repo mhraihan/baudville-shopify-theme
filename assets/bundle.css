@@ -1307,7 +1307,7 @@ img.nav-content-block__image {
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 30px;
+  font-size: 30px !important;
   color: #6a747c;
 }
 .richtext-section h2 {

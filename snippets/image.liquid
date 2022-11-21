@@ -1,8 +1,10 @@
 {% if image %}
- {% if url != blank %}
-    <a href="{{ url }}" class="absolute w-full h-full top-0 left-0"></a>
+  {% if url != blank %}
+    <a href="{{ url }}" class="absolute top-0 left-0 w-full h-full"></a>
   {% endif %}
-<img
+  <img src="{{ image | image_url }}" alt="{{ image.alt }}" loading="lazy" class="block mx-auto">
+  {%- comment -%}
+    <img
     sizes="
         (min-width: 768px) 1000px,
         (min-width: 640px) 500px,
@@ -19,8 +21,9 @@
     src="{{ image | img_url: '1000x' }}"
     alt="{{ image.alt }}"
     loading="lazy"
-    class="w-full h-full object-cover object-center"
+    class="object-cover object-center w-full h-full"
 >
+  {%- endcomment -%}
 {% else %}
-    {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
+  {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
 {% endif %}

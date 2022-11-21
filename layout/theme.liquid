@@ -35,11 +35,15 @@
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
 
-    <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ 'favicon.static.ico' | asset_url }}" type="image/x-icon"/>
+    <script defer="defer" src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{{ 'custom.static.js' | asset_url }}" defer="defer"></script>
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     {{ 'bundle.css' | asset_url | stylesheet_tag }}
 
     <script>
@@ -82,7 +86,7 @@
     {% else %}
       <div id="app" class="flex flex-col min-h-screen font-sans">
         {% section 'header' %}
-        <main id="main" role="main" class="flex-1 pt-8 {% if request.page_type == 'index' %}md:pt-12{% else %}md:pt-20 pb-16 md:pb-32{% endif %}">
+        <main id="main" role="main" class="flex-1 pt-0 {% if request.page_type == 'index' %}md:pt-0{% else %}md:pt-0 pb-16 md:pb-32{% endif %}">
           {{ content_for_layout }}
         </main>
         {% section 'footer' %}

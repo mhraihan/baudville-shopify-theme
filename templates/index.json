@@ -1,10 +1,45 @@
 {
   "sections": {
-    "cfd18cd4-4ea2-409d-9f23-03d1999e4ef7": {
-      "type": "section-banner",
+    "df897395-a0e5-4e6e-9a13-bbae87cb5450": {
+      "type": "section-slider",
+      "blocks": {
+        "template--17009108123944__df897395-a0e5-4e6e-9a13-bbae87cb5450-166901329068ad7370-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_8.jpg",
+            "url": "shopify://products/chequered-red-shirt"
+          }
+        },
+        "template--17009108123944__df897395-a0e5-4e6e-9a13-bbae87cb5450-166901329068ad7370-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_9.jpg",
+            "url": "shopify://products/chequered-red-shirt"
+          }
+        },
+        "f3ee6cde-20fd-4f57-a34f-1eb783b979cc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_10.jpg",
+            "url": ""
+          }
+        },
+        "b07d5ce6-61c9-42a8-80c0-9154f406a5bd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/file_11.jpg",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17009108123944__df897395-a0e5-4e6e-9a13-bbae87cb5450-166901329068ad7370-1",
+        "template--17009108123944__df897395-a0e5-4e6e-9a13-bbae87cb5450-166901329068ad7370-0",
+        "f3ee6cde-20fd-4f57-a34f-1eb783b979cc",
+        "b07d5ce6-61c9-42a8-80c0-9154f406a5bd"
+      ],
       "settings": {
-        "image": "shopify://shop_images/banner.static.jpg",
-        "button-url": "shopify://collections/shop-all-awards",
+        "row": "w-1/2",
         "py": 0
       }
     },
@@ -82,7 +117,7 @@
     }
   },
   "order": [
-    "cfd18cd4-4ea2-409d-9f23-03d1999e4ef7",
+    "df897395-a0e5-4e6e-9a13-bbae87cb5450",
     "3c68bc53-60e6-401a-911e-c9681d587b8a",
     "65f3f99e-225f-4f4a-8fc5-f3b8bc02fe72",
     "90ea9c29-2bae-427c-a4f6-9ba440994e0d",

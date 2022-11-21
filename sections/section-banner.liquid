@@ -1,54 +1,26 @@
 {% assign image = section.settings.image %}
 <div class="fullwidth-banner relative py-{{ section.settings.py }}">
-  {% if section.settings.button-url != blank %}
-    <a href="{{ section.settings.button-url }}" class="absolute w-full h-full top-0 left-0"></a>
-  {% endif %}
- {% if image %}
-      <img
-        sizes="
-          (min-width: 768px) 1000px,
-          (min-width: 640px) 500px,
-          600px
-        "
-        srcset="
-          {{ image | img_url: '400x' }} 400w,
-          {{ image | img_url: '500x' }} 500w,
-          {{ image | img_url: '600x' }} 600w,
-          {{ image | img_url: '700x' }} 700w,
-          {{ image | img_url: '850x' }} 850w,
-          {{ image | img_url: '1000x' }} 1000w
-        "
-        src="{{ image | img_url: '1000x' }}"
-        alt="{{ image.alt }}"
-        loading="lazy"
-        class="w-full h-full object-cover object-center"
-      >
-    {% else %}
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
-    {% endif %}
+  {% render 'image', image: image, url: section.settings.button-url %}
 </div>
 
 
 {% schema %}
-{
-  "name": "t:sections.banner.name",
-  "class": "shopify-section-vue",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "t:common.image"
-    },
-    {
-      "type": "url",
-      "id": "button-url",
-      "label": "t:common.button.url"
-    },
-    {
+  {
+    "name": "t:sections.banner.name",
+    "class": "shopify-section-vue",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:common.image"
+      }, {
+        "type": "url",
+        "id": "button-url",
+        "label": "t:common.button.url"
+      }, {
         "type": "header",
         "content": "Adjust padding"
-      }, 
-      {
+      }, {
         "type": "range",
         "label": "Padding Top/Botom",
         "id": "py",
@@ -57,12 +29,12 @@
         "step": 1,
         "default": 0
       }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.banner.name",
-      "category": "Image"
-    }
-  ]
-}
+    ],
+    "presets": [
+      {
+        "name": "t:sections.banner.name",
+        "category": "Image"
+      }
+    ]
+  }
 {% endschema %}

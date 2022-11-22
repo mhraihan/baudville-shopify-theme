@@ -66,14 +66,14 @@
             </div>
              {%- if form.errors -%}
                 <div class="block">
-                    <small class="newsletter-form__message form__message" id="ContactFooter-error">
-                      {% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
+                    <small class="flex items-center h-4 mt-2 text-red-600 newsletter-form__message form__message" id="ContactFooter-error">
+                      {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
                     </small>
                 </div>
                 {%- endif -%}
             {%- if form.posted_successfully? -%}
-                <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>
-                  {% render 'icon-success' %} Thanks for subscribing
+                <h3 class="flex items-center h-4 mt-2 leading-normal text-green-100 form__message newsletter-form__message newsletter-form__message--success" id="ContactFooter-success" tabindex="-1" autofocus>
+                 Thanks for subscribing
                 </h3>
               {%- endif -%}
             {%- endform -%}

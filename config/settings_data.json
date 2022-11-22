@@ -121,7 +121,74 @@
       },
       "footer": {
         "type": "footer",
-        "settings": {}
+        "blocks": {
+          "479f154b-7106-4a66-8eb7-8df59ce494b4": {
+            "type": "menu",
+            "settings": {
+              "title": "Customer Care",
+              "menu": "customer-care",
+              "text": ""
+            }
+          },
+          "d28b8df0-27c0-43a2-8dcb-be744068d543": {
+            "type": "menu",
+            "settings": {
+              "title": "About Baudville",
+              "menu": "about-baudville",
+              "text": ""
+            }
+          },
+          "e230c5d0-cd92-40f2-942c-69dd757afea5": {
+            "type": "menu",
+            "settings": {
+              "title": "Contact",
+              "menu": "contact",
+              "text": "<p><a href=\"tel:+18007280888\"><strong>1-800-728-0888</strong></a></p><p>5380 52nd Street SE</p><p>Grand Rapids, MI 49512</p>"
+            }
+          },
+          "1b120159-5b4e-4fb3-accd-816246ba52c5": {
+            "type": "brand",
+            "settings": {
+              "image1": "shopify://shop_images/b-brands.static.png",
+              "image_link1": "",
+              "image2": "shopify://shop_images/b-logo.static.png",
+              "image_link2": "https://www.baudville.com/",
+              "image3": "shopify://shop_images/br.static.png",
+              "image_link3": "https://recognation.com/",
+              "image_link4": ""
+            }
+          },
+          "2a2afe82-2829-4dfc-89ec-67cc34f78df3": {
+            "type": "newsletter-brand",
+            "settings": {
+              "image1": "shopify://shop_images/hh-logo.static.png",
+              "image_link1": "https://baudvillebrands.com/giving-back",
+              "image2": "shopify://shop_images/ssl.static.png",
+              "image_link2": "",
+              "image3": "shopify://shop_images/bbb.static.png",
+              "image_link3": "",
+              "image4": "shopify://shop_images/gptw.static.png",
+              "image_link4": ""
+            }
+          }
+        },
+        "block_order": [
+          "479f154b-7106-4a66-8eb7-8df59ce494b4",
+          "d28b8df0-27c0-43a2-8dcb-be744068d543",
+          "e230c5d0-cd92-40f2-942c-69dd757afea5",
+          "1b120159-5b4e-4fb3-accd-816246ba52c5",
+          "2a2afe82-2829-4dfc-89ec-67cc34f78df3"
+        ],
+        "settings": {
+          "newsletter": true,
+          "newsletter-title": "Sign up for emails",
+          "social": true,
+          "announcement": "It's never too early to start crossing gifts off your list!",
+          "top-menu": "",
+          "copyright": "&copy; {{ 'now' | date: '%Y' }} by Baudville, Inc. All Rights Reserved",
+          "footer_bottom_title": "Terms of Use & Privacy Policy",
+          "footer_bottom_link": "shopify://policies/privacy-policy"
+        }
       }
     },
     "content_for_index": []

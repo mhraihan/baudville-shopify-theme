@@ -1,0 +1,14 @@
+{%- for i in (1..4) -%}
+  {% capture image_link %}image_link{{ i }}{% endcapture %}
+  {% capture image %}image{{ i }}{% endcapture %}
+  {% if block.settings[image] != blank %}
+    {% capture img %}<img src="{{ block.settings[image] | image_url}}" alt="">{% endcapture %}
+    {% if block.settings[image_link] %}
+      <a class="page-footer__brand" href="{{ block.settings[image_link] | default: '#' }}">
+        {{ img }}
+      </a>
+    {% else %}
+      {{ img }}
+    {% endif %}
+  {% endif %}
+{%- endfor -%}

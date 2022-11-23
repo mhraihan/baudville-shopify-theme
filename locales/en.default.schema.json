@@ -61,6 +61,10 @@
         "8-products": "8 Products"
       }
     },
+    "collections": {
+      "name": "Featued Collections",
+      "settings": {}
+    },
     "hero": {
       "name": "Gallery Image",
       "settings": {}

@@ -58,11 +58,41 @@
         "py": 10
       }
     },
-    "90ea9c29-2bae-427c-a4f6-9ba440994e0d": {
-      "type": "section-collection",
+    "cd303ea5-f607-47a1-8ed2-5645441eddea": {
+      "type": "section-featured-collections",
+      "blocks": {
+        "78a6945e-8954-4a87-98a3-3b6af0fae387": {
+          "type": "collection",
+          "settings": {
+            "collection": "awards",
+            "image": "shopify://shop_images/file_1_452e58e2-9f6b-43ec-b2b9-ee43ce239ba2.jpg",
+            "title": "Trophies & Awards"
+          }
+        },
+        "4c8737d2-b4ad-48c7-9382-a71088a62672": {
+          "type": "collection",
+          "settings": {
+            "collection": "employee-gifts-new-arrivals",
+            "image": "shopify://shop_images/file_2_8b40cc80-d9f1-4470-bdfd-374d65c9b2de.jpg",
+            "title": "new products"
+          }
+        },
+        "c928754f-b54d-4627-a084-153ac28b8f39": {
+          "type": "collection",
+          "settings": {
+            "collection": "clearance",
+            "image": "shopify://shop_images/New_Project_64.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "78a6945e-8954-4a87-98a3-3b6af0fae387",
+        "4c8737d2-b4ad-48c7-9382-a71088a62672",
+        "c928754f-b54d-4627-a084-153ac28b8f39"
+      ],
       "settings": {
-        "title": "Shop Our Latest Products",
-        "collection_featured": "shop-all-awards"
+        "title": "Shop Our Latest Products"
       }
     },
     "2ddf408e-0f50-421d-9146-0efb37445748": {
@@ -163,7 +193,7 @@
     "df897395-a0e5-4e6e-9a13-bbae87cb5450",
     "3c68bc53-60e6-401a-911e-c9681d587b8a",
     "65f3f99e-225f-4f4a-8fc5-f3b8bc02fe72",
-    "90ea9c29-2bae-427c-a4f6-9ba440994e0d",
+    "cd303ea5-f607-47a1-8ed2-5645441eddea",
     "2ddf408e-0f50-421d-9146-0efb37445748",
     "ee0a60a2-a5d3-40a1-a8ba-23df34f94aee",
     "827f40c0-421e-4fdf-a914-f192ed25857d",

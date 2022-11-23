@@ -87,6 +87,7 @@
       <div id="app" class="flex flex-col min-h-screen font-sans">
         {% section 'header' %}
         <main id="main" role="main" class="flex-1 pt-0 {% if request.page_type == 'index' %}md:pt-0{% else %}md:pt-0 pb-16 md:pb-32{% endif %}">
+          {% render 'breadcrumbs' %}
           {{ content_for_layout }}
         </main>
         {% section 'footer' %}

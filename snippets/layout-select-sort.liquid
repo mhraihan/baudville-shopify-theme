@@ -1,0 +1,13 @@
+{% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+
+<div class="w-full h-full {{ class | default: '' }}" style="{{ style | default: '' }}">
+  <select @change="appendParameter({
+                  parameter: 'sort_by'
+                }, $event)" class="bg-green-100 h-full outline-none pl-4 pr-2 text-sm w-full">
+    {% for option in collection.sort_options %}
+      <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+        {{ option.name }}
+      </option>
+    {% endfor %}
+  </select>
+</div>

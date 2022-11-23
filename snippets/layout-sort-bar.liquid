@@ -1,0 +1,17 @@
+<div class="{{ class | default: '' }}" style="{{ style | default: '' }}">
+  <div class="flex h-14 justify-end">
+
+
+    {% unless template == 'search' %}
+      <div class="bg-green-100 flex items-center px-4 text-white">
+        <div class="h-full hidden items-center mr4 sm:flex text-sm text-white tracking-wider">
+          {{ 'common.sort' | t }}
+        </div>
+
+        <div class="h-full pr-1">
+          {% render 'layout-select-sort' %}
+        </div>
+      </div>
+    {% endunless %}
+  </div>
+</div>

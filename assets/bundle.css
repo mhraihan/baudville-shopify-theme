@@ -1000,6 +1000,9 @@ video {
 .pb-10 {
   padding-bottom: 2.5rem;
 }
+.pt-14 {
+  padding-top: 3.5rem;
+}
 .text-left {
   text-align: left;
 }

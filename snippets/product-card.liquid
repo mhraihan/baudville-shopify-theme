@@ -1,15 +1,41 @@
-<div class="w-full">
-  <a href="{{ product_card.url | within: collection }}" class="relative block">
-    <img class="mb-1" src="{{ product_card.featured_image.src | image_url }}" alt="{{ product_card.featured_image.alt | escape }}" loading="lazy">
-    <div class="p-2 text-center text-white bg-green-100 rounded-b rounded-l">
-      <h4 class="text-2xl">
-        {{ product_card.title }}</h4>
-      <h3 class="flex justify-center text-xl">
-        Shop now
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 fill-white">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
-        </svg>
-      </h3>
+<div class="product-summary w-full " itemscope="" itemtype="http://schema.org/Product">
+  <div class="product-summary__media relative group flex border-2 broder-gray-300 rounded-sm items-center">
+    <div class="product-summary__media-link-wrapper ">
+      <a class="product-summary__media-link" href="{{ product_card.url | within: collection }}">
+        <img itemprop="image" class="product-summary__media-image" src="{{ product_card.featured_image.src | image_url }}" alt="{{ product_card.featured_image.alt | default: product_card.title | escape }}" loading="lazy">
+      </a>
     </div>
-  </a>
+    <div class="quickview-button absolute bottom-0 left-0 w-full opacity-0 transition-opacity group-hover:opacity-100">
+      <button class="button button--full button--quickview" rel="nofollow" data-modifier="false" href="#">
+        Quick View
+      </button>
+    </div>
+  </div>
+  <div class="my-3 product-summary__info text-center">
+    <p class="product-summary__name mb-2" itemprop="name">
+      <a class="hover:text-green-100 tracking-wider text-base font-semibold text-gray-100 " itemprop="url" href="{{ product_card.url | within: collection }}">
+        {{ product_card.title }}
+      </a>
+    </p>
+    <div class="flex justify-center items-center">
+      {%- assign cv = product_card.selected_or_first_available_variant -%}
+      <div class="border-gray-200 border-r-2 mr-4 p-2 pr-4 product-summary__id text-xs" itemprop="productID"># 92757O</div>
+      <div class="product-prices flex product-prices--summary" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+        {%- if cv.compare_at_price > 0 -%}
+          <p class="product-prices__price product-prices__price--original mr-2">
+            <s>{{ cv.compare_at_price | money }}</s>
+          </p>
+        {%- endif -%}
+        <p class="{% if cv.compare_at_price > 0 %} text-red-50 font-semibold {% endif %} product-prices__price product-prices__price--discounted">
+          <span>
+            <meta content="USD" itemprop="priceCurrency">
+            <meta content="1.5" itemprop="price">
+            {{ cv.price | money }}
+            <link href="https://schema.org/InStock" itemprop="availability">
+          </span>
+        </p>
+      </div>
+    </div>
+
+  </div>
 </div>

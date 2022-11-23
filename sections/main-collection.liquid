@@ -42,3 +42,22 @@
 
   {% endpaginate %}
 </div>
+
+{% javascript %}
+  window.addEventListener("DOMContentLoaded", (event) => {
+    var getMaxHeight = function($elms = $(".product-summary__media-image")) {
+      var maxHeight = 0;
+      $elms.each(function() {
+
+// In some cases you may want to use outerHeight() instead
+        var height = $(this).height();
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      });
+      console.log(maxHeight)
+      return maxHeight;
+    }();
+    document.documentElement.style.setProperty('--product-image', `${getMaxHeight}px`);
+  });
+{% endjavascript %}

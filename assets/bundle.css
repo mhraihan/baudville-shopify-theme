@@ -1664,6 +1664,9 @@ img.nav-content-block__image {
 .desktop-filters__section:hover ul {
   display: block;
 }
+.desktop-filters__section:hover .desktop-filters__heading::after {
+  transform: translate(0, -50%) rotate(180deg);
+}
 .desktop-filters__heading {
   display: block;
   position: relative;
@@ -1688,6 +1691,7 @@ img.nav-content-block__image {
   right: 16px;
   font-size: 22px;
   content: "";
+  transition: all 0.2s ease 0s;
 }
 .desktop-filters__group {
   display: none;

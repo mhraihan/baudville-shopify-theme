@@ -28,7 +28,7 @@
       </div>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6">
         {% for product in collection.products %}
-          {% render 'product-card', product_card: product %}
+          {% render 'product-card', product_card: product, index: forloop.index %}
         {% endfor %}
       </div>
     {% else %}

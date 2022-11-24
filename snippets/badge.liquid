@@ -1,0 +1,13 @@
+{% assign created =  time | date: '%s' %}
+{% assign today =  "now" | date: '%s' %}
+{% comment %}
+  difference in seconds
+{% endcomment %}
+{% assign diffSeconds = today | minus: created %}
+{% comment %}
+  difference in days
+{% endcomment %}
+{% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+{%- if diffDays <= 30 -%}
+  <p class="uppercase tracking-wide font-bold text-green-100 text-xl font-bn">New</p>
+{%- endif -%}

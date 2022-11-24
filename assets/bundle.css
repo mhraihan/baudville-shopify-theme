@@ -1044,6 +1044,9 @@ video {
 .pl-5 {
   padding-left: 1.25rem;
 }
+.pt-5 {
+  padding-top: 1.25rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1188,6 +1191,18 @@ video {
 }
 .duration-150 {
   transition-duration: 150ms;
+}
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+.font-bn {
+  font-family: "Bebas Neue", cursive;
+}
+.font-mont {
+  font-family: "Montserrat", sans-serif;
+}
+.font-play {
+  font-family: "Playfair Display", serif;
 }
 /*--------------------------------------------------------------
 # Global
@@ -1514,11 +1529,6 @@ img.nav-content-block__image {
 .product-summary__media {
   min-height: 150px;
   overflow: hidden;
-}
-.product-prices {
-  font-size: 20px;
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 700;
 }
 .footer-bg {
   background-color: #cee1dc;

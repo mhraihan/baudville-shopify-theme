@@ -1456,10 +1456,14 @@ a {
 /* cart icons */
 .svg-icon {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  height: 1.5rem;
+  width: 1.5rem;
   vertical-align: middle;
   transition: fill 0.3s ease;
+}
+.svg-icon--small {
+  height: 1rem;
+  width: 1rem;
 }
 .svg-icon--page-header-cart {
   width: 28px;

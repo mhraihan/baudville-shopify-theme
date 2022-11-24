@@ -1,6 +1,6 @@
 window.theme.modalVideo = {
   init(n) {
-    $(`.product-summary:nth-child(n + ${n}) .js-video-button`).modalVideo();
+    $(`.product-summary:nth-child(n + ${n + 1}) .js-video-button`).modalVideo();
   },
 };
 window.addEventListener("DOMContentLoaded", (event) => {

@@ -18,7 +18,7 @@
   {% paginate collection.products by limit %}
     {% if collection and collection.products %}
       {% assign amount = collection.all_products_count %}
-      {% render 'layout-sort-bar', amount: amount class: 'mb-8' %}
+      {% render 'layout-sort-bar', amount: amount, section: section, class: 'mb-8' %}
       <div class="product-result-controls flex items-center justify-between text-gray-100 mb-3">
         <h2 class="product-result-controls__category-name text-xl">
           {{ collection.metafields.custom.subtitle | default: collection.title }}
@@ -55,3 +55,108 @@
     display: none;
   }
 {% endstylesheet %}
+
+{% schema %}
+  {
+    "name": "Colection",
+    "class": "section-collection",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "info": "Required."
+          },
+          {
+            "type": "collection",
+            "id": "collection_1",
+            "label": "Collection 1"
+          },
+          {
+            "type": "collection",
+            "id": "collection_2",
+            "label": "Collection 2"
+          },
+          {
+            "type": "collection",
+            "id": "collection_3",
+            "label": "Collection 3"
+          }, {
+            "type": "collection",
+            "id": "collection_4",
+            "label": "Collection 4"
+          }, {
+            "type": "collection",
+            "id": "collection_5",
+            "label": "Collection 5"
+          }, {
+            "type": "collection",
+            "id": "collection_6",
+            "label": "Collection 6"
+          }, {
+            "type": "collection",
+            "id": "collection_7",
+            "label": "Collection 7"
+          }, {
+            "type": "collection",
+            "id": "collection_8",
+            "label": "Collection 8"
+          }, {
+            "type": "collection",
+            "id": "collection_9",
+            "label": "Collection9"
+          }, {
+            "type": "collection",
+            "id": "collection_10",
+            "label": "Collection 10"
+          }, {
+            "type": "collection",
+            "id": "collection_11",
+            "label": "Collection 11"
+          }, {
+            "type": "collection",
+            "id": "collection_12",
+            "label": "Collection 12"
+          }, {
+            "type": "collection",
+            "id": "collection_13",
+            "label": "Collection 13"
+          }, {
+            "type": "collection",
+            "id": "collection_14",
+            "label": "Collection 14"
+          }, {
+            "type": "collection",
+            "id": "collection_15",
+            "label": "Collection 15"
+          }, {
+            "type": "collection",
+            "id": "collection_16",
+            "label": "Collection 16"
+          }, {
+            "type": "collection",
+            "id": "collection_17",
+            "label": "Collection 17"
+          }, {
+            "type": "collection",
+            "id": "collection_18",
+            "label": "Collection 18"
+          }, {
+            "type": "collection",
+            "id": "collection_19",
+            "label": "Collection 19"
+          }, {
+            "type": "collection",
+            "id": "collection_20",
+            "label": "Colection 20"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

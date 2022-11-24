@@ -1,0 +1,22 @@
+{%- for block in section.blocks -%}
+  {%- if block.settings.title != blank-%}
+    <div class="desktop-filters__section desktop-filters__section--price" tabindex="1">
+      <div class="desktop-filters__heading">{{ block.settings.title }}</div>
+      <ul class="desktop-filters__group list-reset">
+        {%- for i in (1..20) -%}
+          {% capture menu %}collection_{{ i }}{% endcapture %}
+          {% if block.settings[menu] != blank %}
+            {% assign collection = collections[block.settings[menu]] %}
+            <li class="result-filter">
+              <a rel="nofollow" class="result-filter__link" href="{{ collection.url }}">
+                <span class="result-filter__checkbox"></span>
+                <span class="result-filter__value">{{ collection.title }}</span>
+                <span class="result-filter__count">({{ collection.all_products_count }})</span>
+              </a>
+            </li>
+          {% endif %}
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endfor -%}

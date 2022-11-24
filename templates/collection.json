@@ -2,11 +2,119 @@
   "sections": {
     "collection": {
       "type": "main-collection",
-      "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
+      "blocks": {
+        "624fa1cf-a640-4e30-b8d1-db4e1bed38f1": {
+          "type": "collection",
+          "settings": {
+            "title": "Price Range",
+            "collection_1": "awards",
+            "collection_2": "clearance",
+            "collection_3": "employee-gifts-new-arrivals",
+            "collection_4": "",
+            "collection_5": "",
+            "collection_6": "",
+            "collection_7": "",
+            "collection_8": "",
+            "collection_9": "",
+            "collection_10": "",
+            "collection_11": "",
+            "collection_12": "",
+            "collection_13": "",
+            "collection_14": "",
+            "collection_15": "",
+            "collection_16": "",
+            "collection_17": "",
+            "collection_18": "",
+            "collection_19": "",
+            "collection_20": ""
+          }
+        },
+        "dab0637d-4485-45ab-a2ec-e4f8cf8dc7ff": {
+          "type": "collection",
+          "settings": {
+            "title": "Product Category",
+            "collection_1": "awards",
+            "collection_2": "",
+            "collection_3": "",
+            "collection_4": "",
+            "collection_5": "",
+            "collection_6": "",
+            "collection_7": "",
+            "collection_8": "",
+            "collection_9": "",
+            "collection_10": "",
+            "collection_11": "",
+            "collection_12": "",
+            "collection_13": "",
+            "collection_14": "",
+            "collection_15": "",
+            "collection_16": "",
+            "collection_17": "",
+            "collection_18": "",
+            "collection_19": "",
+            "collection_20": ""
+          }
+        },
+        "0726968b-e93d-480f-ab61-3d1be272b237": {
+          "type": "collection",
+          "settings": {
+            "title": "Collection",
+            "collection_1": "frontpage",
+            "collection_2": "",
+            "collection_3": "",
+            "collection_4": "",
+            "collection_5": "",
+            "collection_6": "",
+            "collection_7": "",
+            "collection_8": "",
+            "collection_9": "",
+            "collection_10": "",
+            "collection_11": "",
+            "collection_12": "",
+            "collection_13": "",
+            "collection_14": "",
+            "collection_15": "",
+            "collection_16": "",
+            "collection_17": "",
+            "collection_18": "",
+            "collection_19": "",
+            "collection_20": ""
+          }
+        },
+        "c4535e08-76f5-4d56-8820-1e5839793087": {
+          "type": "collection",
+          "settings": {
+            "title": "Recipient",
+            "collection_1": "shop-all-awards",
+            "collection_2": "",
+            "collection_3": "",
+            "collection_4": "",
+            "collection_5": "",
+            "collection_6": "",
+            "collection_7": "",
+            "collection_8": "",
+            "collection_9": "",
+            "collection_10": "",
+            "collection_11": "",
+            "collection_12": "",
+            "collection_13": "",
+            "collection_14": "",
+            "collection_15": "",
+            "collection_16": "",
+            "collection_17": "",
+            "collection_18": "",
+            "collection_19": "",
+            "collection_20": ""
+          }
+        }
+      },
+      "block_order": [
+        "624fa1cf-a640-4e30-b8d1-db4e1bed38f1",
+        "dab0637d-4485-45ab-a2ec-e4f8cf8dc7ff",
+        "0726968b-e93d-480f-ab61-3d1be272b237",
+        "c4535e08-76f5-4d56-8820-1e5839793087"
+      ],
+      "settings": {}
     }
   },
   "order": ["collection"]

@@ -2,7 +2,7 @@
   <div class="product-summary__media relative group flex border-2 broder-gray-300 rounded-sm items-center">
     <div class="product-summary__media-link-wrapper ">
       <a class="product-summary__media-link" href="{{ product_card.url | within: collection }}">
-        <img data-height="{{ product_card.featured_image.height }}" itemprop="image" class="product-summary__media-image" src="{{ product_card.featured_image.src | image_url: width:600, height: 600}}" alt="{{ product_card.featured_image.alt | default: product_card.title | escape }}">
+        <img data-height="{{ product_card.featured_image.height }}" itemprop="image" class="product-summary__media-image" src="{{ product_card.featured_image.src | image_url: width:600, height: 600, crop: 'center' }}" alt="{{ product_card.featured_image.alt | default: product_card.title | escape }}">
       </a>
     </div>
     <div class="quickview-button absolute bottom-0 left-0 w-full opacity-0 transition-opacity group-hover:opacity-100">

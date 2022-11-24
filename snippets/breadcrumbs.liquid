@@ -14,7 +14,7 @@
         {%- when 'product' -%}
           {%- if collection.url -%}
             <li class="breadcrumbs__item">
-              {{ collection.title | link_to: collection.url }}
+              <a href="{{ collection.url }}" class="breadcrumbs__link">{{ collection.title }}</a>
             </li>
           {%- endif -%}
           <li class="breadcrumbs__item">
@@ -23,7 +23,7 @@
         {%- when 'collection' and collection.handle -%}
           {%- if current_tags -%}
             <li class="breadcrumbs__item">
-              {{ collection.title | link_to: collection.url }}
+              <a href="{{ collection.url }}" class="breadcrumbs__link">{{ collection.title }}</a>
             </li>
             <li class="breadcrumbs__item">
               {%- capture tag_url -%}

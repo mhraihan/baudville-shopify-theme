@@ -5,9 +5,9 @@
   <a href="{{ collection.url }}" class="relative block">
     <img class="mb-1" src="{{ image | image_url }}" alt="{{ collection.title | escape }}" loading="lazy">
     <div class="p-2 text-center text-white bg-green-100 rounded-b rounded-l">
-      <h4 class="text-2xl">
+      <h4 class="text-2xl text-white">
         {{ block.settings.title | default: collection.title | escape }}</h4>
-      <h3 class="flex justify-center text-xl">
+      <h3 class="flex justify-center text-xl text-white">
         Shop now
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 fill-white">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>

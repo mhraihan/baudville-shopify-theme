@@ -18,4 +18,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       prevEl: ".brand-images-swiper .swiper-button-prev",
     },
   });
+
+  // modal video
+  $(".js-video-button").modalVideo();
 });

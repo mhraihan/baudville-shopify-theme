@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preload" href="{{ 'bundle.css' | asset_url }}" as="style">
     <link rel="preload" href="{{ 'bundle.js' | asset_url }}" as="script">
+    <link rel="preload" href="{{ 'custom.static.js' | asset_url }}" as="script">
 
     <title>
       {{ page_title }}
@@ -38,6 +39,7 @@
     <link rel="icon" href="{{ 'favicon.static.ico' | asset_url }}" type="image/x-icon"/>
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script defer="defer" src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{{ 'jquery-modal-video.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'custom.static.js' | asset_url }}" defer="defer"></script>
 
     <!-- google fonts -->

@@ -13,8 +13,8 @@
       {{ collection.description }}
     </div>
   {% endif %}
-
-  {% paginate collection.products by 16 %}
+  {% assign limit = 8 %}
+  {% paginate collection.products by limit %}
     {% if collection and collection.products %}
       {% assign amount = collection.all_products_count %}
       {% render 'layout-sort-bar', amount: amount class: 'mb-8' %}
@@ -26,7 +26,7 @@
           {{ amount }} {{ amount | pluralize: 'Item', 'Items' }}
         </div>
       </div>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6">
+      <div class="collection-products grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6">
         {% for product in collection.products %}
           {% render 'product-card', product_card: product, index: forloop.index %}
         {% endfor %}
@@ -38,34 +38,13 @@
     {% endif %}
 
 
-    {% render 'layout-pagination', paginate: paginate %}
-
+    {%- comment -%}
+      {% render 'layout-pagination', paginate: paginate %}
+    {%- endcomment -%}
+    <renderless-pagination-products :pages="{{ paginate.pages }}" :current="{{ paginate.current_page }}" :limit="{{ limit }}" :handle="'{{ collection.handle }}'" :target="'.collection-products'" :url="'{{  collection.url }}'" v-slot="{ loadMore, text, show }">
+      <div v-if="show.value" class="pagination flex items-center justify-center">
+        <button @click="loadMore" class="button" v-html="text.value"></button>
+      </div>
+    </renderless-pagination-products>
   {% endpaginate %}
 </div>
-
-{% javascript %}
-  window.addEventListener("DOMContentLoaded", (event) => {
-    function getMaxHeight($elms = $(".product-summary__media-image")) {
-      var maxHeight = 0;
-      $elms.each(function() {
-
-// In some cases you may want to use outerHeight() instead
-        var height = $(this).height();
-        if (height > maxHeight) {
-          maxHeight = height;
-        }
-      });
-      console
-        .log(maxHeight)
-        document
-        .documentElement
-        .style
-        .setProperty('--product-image', `${maxHeight}px`);
-      return maxHeight;
-    }
-
-// getMaxHeight();
-// setTimeout(getMaxHeight,1000);
-
-  });
-{% endjavascript %}

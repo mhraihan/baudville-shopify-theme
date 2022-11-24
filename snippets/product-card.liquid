@@ -21,7 +21,7 @@
       {%- assign cv = product_card.selected_or_first_available_variant -%}
       {% if cv.sku != blank %}
         <div class="border-gray-200 border-r-2 mr-4 p-2 pr-4 product-summary__id text-xs" itemprop="productID">
-          {{ cv.sku }}
+          # {{ cv.sku }}
         </div>
       {% endif %}
       <div class="product-prices flex product-prices--summary" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">

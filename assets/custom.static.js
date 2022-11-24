@@ -1,3 +1,8 @@
+window.theme.modalVideo = {
+  init(n) {
+    $(`.product-summary:nth-child(n + ${n}) .js-video-button`).modalVideo();
+  },
+};
 window.addEventListener("DOMContentLoaded", (event) => {
   const imageSlider = new Swiper(".product-images-swiper", {
     loop: true,
@@ -20,5 +25,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   // modal video
-  $(".js-video-button").modalVideo();
+  $(`.js-video-button`).modalVideo();
 });

@@ -39,8 +39,8 @@
     <link rel="icon" href="{{ 'favicon.static.ico' | asset_url }}" type="image/x-icon"/>
     <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script defer="defer" src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="{{ 'jquery-modal-video.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'custom.static.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'plugins.statics.js' | asset_url }}" defer="defer"></script>
+
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -103,5 +103,6 @@
   {% endif %}
   <!-- webpack bundle -->
   <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom.static.js' | asset_url }}" defer="defer"></script>
   <script type="text/javascript" id="" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
 </body></html>

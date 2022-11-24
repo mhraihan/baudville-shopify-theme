@@ -1,3 +1,4 @@
+{% assign limit = 8 %}
 <div class="container pt-0">
   {% if collection.image %}
     <div class="pb-10">
@@ -13,7 +14,7 @@
       {{ collection.description }}
     </div>
   {% endif %}
-  {% assign limit = 8 %}
+
   {% paginate collection.products by limit %}
     {% if collection and collection.products %}
       {% assign amount = collection.all_products_count %}
@@ -43,8 +44,14 @@
     {%- endcomment -%}
     <renderless-pagination-products :pages="{{ paginate.pages }}" :current="{{ paginate.current_page }}" :limit="{{ limit }}" :handle="'{{ collection.handle }}'" :target="'.collection-products'" :url="'{{  collection.url }}'" v-slot="{ loadMore, text, show }">
       <div v-if="show.value" class="pagination flex items-center justify-center">
-        <button @click="loadMore" class="button" v-html="text.value"></button>
+        <button v-if="text" @click="loadMore" class="button uppercase px-10 py-5 tracking-widest font-bn mt-6" v-html="text.value"></button>
       </div>
     </renderless-pagination-products>
   {% endpaginate %}
 </div>
+
+{% stylesheet %}
+  .product-summary:nth-child(n + 9) .trustpilot-widget {
+    display: none;
+  }
+{% endstylesheet %}

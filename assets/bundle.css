@@ -1512,7 +1512,8 @@ img.nav-content-block__image {
   font-weight: 700;
 }
 .product-summary__media {
-  height: var(--product-image, auto);
+  min-height: 150px;
+  overflow: hidden;
 }
 .product-prices {
   font-size: 20px;

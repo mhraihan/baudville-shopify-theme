@@ -45,7 +45,7 @@
 
 {% javascript %}
   window.addEventListener("DOMContentLoaded", (event) => {
-    var getMaxHeight = function($elms = $(".product-summary__media-image")) {
+    function getMaxHeight($elms = $(".product-summary__media-image")) {
       var maxHeight = 0;
       $elms.each(function() {
 
@@ -55,9 +55,17 @@
           maxHeight = height;
         }
       });
-      console.log(maxHeight)
+      console
+        .log(maxHeight)
+        document
+        .documentElement
+        .style
+        .setProperty('--product-image', `${maxHeight}px`);
       return maxHeight;
-    }();
-    document.documentElement.style.setProperty('--product-image', `${getMaxHeight}px`);
+    }
+
+// getMaxHeight();
+// setTimeout(getMaxHeight,1000);
+
   });
 {% endjavascript %}

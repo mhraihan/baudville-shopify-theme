@@ -25,9 +25,6 @@
           if (!entries[0].isIntersecting) 
             return;
           
-
-
-
           observer.unobserve(this);
           fetch(this.dataset.url).then(response => response.text()).then(text => {
             const html = document.createElement('div');
@@ -36,9 +33,7 @@
             if (recommendations && recommendations.innerHTML.trim().length) {
               this.innerHTML = recommendations.innerHTML;
             }
-            console.log('featch complete');
             window.theme.modalVideo.init(0);
-            console.log(recommendations);
           }).catch(e => {
             console.error(e);
           });

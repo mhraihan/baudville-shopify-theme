@@ -61,49 +61,47 @@
     </div>
   </renderless-product-gallery>
 
-  <div class="md:mt-12">
+  <div class="md:mt-0">
     {% if product.title %}
-      <h1 class="text-2xl lg:text-3xl font-bold mb-4 md:mb-8">
+      <h1 class="normal-case font-mont text-2xl font-bold mb-4 md:mb-1 ">
+       {% render 'badge', time: product.created_at, font: 'text-2xl' %}
         {{ product.title }}
       </h1>
     {% endif %}
 
-    {% if current_variant.available %}
-      <div class="mb-10">
-        <div class="flex gap-3">
-          <span class="inline-block text-lg {% if current_variant.compare_at_price %}text-red-500{% endif %}">
-            {{ current_variant.price | money }}
-          </span>
-
-          {% if current_variant.compare_at_price %}
-            <del class="text-lg">
-              {{ current_variant.compare_at_price | money }}
-            </del>
-
-            <div class="bg-red-500 text-white text-sm tracking-wider uppercase px-2 py-1">
-              {{ 'common.sale' | t }}
-            </div>
-          {% endif %}
-        </div>
-
-      </div>
-    {% else %}
-      <div class="mb-6">
-        {{ 'common.sold_out' | t }}
+    {% if current_variant.sku != blank %}
+      <div class=" py-2  product-summary__id text-base" itemprop="productID">
+        # {{ current_variant.sku }}
       </div>
     {% endif %}
+    <div class="mb-4 pb-2 border-b border-gray-300">
+      {% if current_variant.available %}
+        <div class="mt-1 mb-0">
+        {% render 'price' cv: current_variant %}
+        </div>
+      {% else %}
+        <div class="mb-6">
+          {{ 'common.sold_out' | t }}
+        </div>
+      {% endif %}
+    </div>
 
     {% form 'product', product %}
+      {% render 'quantity' %}
       <div class="flex items-end gap-4 mb-6">
         {% if current_variant.available %}
-          <input
+         <div class="flex mt-4 items-center">
+          <label for="input-quantity" class="qty mr-1 text-gray-500">Qty</label>
+           <input
             type="number"
             name="quantity"
             value="1"
+            id="input-quantity"
             min="1"
             pattern="[0-9]*"
-            class="w-16"
+            class="w-20 text-xl px-2 h-8 text-center font-bn border border-gray-400 rounded ml-1"
           >
+         </div>
         {% endif %}
 
         {% if product.has_only_default_variant %}
@@ -167,14 +165,18 @@
             {{ form | payment_button }}
           </div> {%- endcomment -%}
 
-          <div>
-            <button name="add" class="button button-secondary w-full h-12">
+          <div class="w-full">
+            <button name="add" class="button button--full bg-red-50 text-white w-full font-bn border-white h-12">
               {{ 'action.add_to_cart' | t }}
             </button>
           </div>
         </div>
+        <div class="mt-4 stock-alert">
+          <p>In Stock and ready to ship!</p>
+        </div>
       {% endif %}
     {% endform %}
+    {% render 'share' product: product%}
   </div>
 </div>
 <div class="product-detail-container__description-container py-12 my-10 bg-blue-100" id="description">

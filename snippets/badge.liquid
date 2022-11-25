@@ -9,5 +9,9 @@
 {% endcomment %}
 {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
 {%- if diffDays <= 30 -%}
-  <p class="uppercase tracking-wide font-bold text-green-100 text-xl font-bn">New</p>
+  {% assign fonts = 'text-xl' %}
+  {%- if font -%}
+    {% assign fonts = font %}
+  {%- endif -%}
+  <span class="{{ fonts }} font-bold tracking-wide text-green-100 uppercase font-bn">New</span>
 {%- endif -%}

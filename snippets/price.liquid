@@ -1,0 +1,15 @@
+<div class="flex text-xl font-bold product-prices font-bn product-prices--summary" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+  {%- if cv.compare_at_price > 0 -%}
+    <p class="mr-2 text-gray-400 product-prices__price product-prices__price--original">
+      <s>{{ cv.compare_at_price | money }}</s>
+    </p>
+  {%- endif -%}
+  <p class="{% if cv.compare_at_price > 0 %} text-red-50 font-semibold {% endif %} product-prices__price product-prices__price--discounted">
+    <span>
+      <meta content="USD" itemprop="priceCurrency">
+      <meta content="1.5" itemprop="price">
+      {{ cv.price | money }}
+      <link href="https://schema.org/InStock" itemprop="availability">
+    </span>
+  </p>
+</div>

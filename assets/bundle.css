@@ -269,7 +269,7 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   opacity: 1; /* 1 */
-  color: #4F4F4F; /* 2 */
+  color: #a6acb0; /* 2 */
 }
 /*
 Set the default cursor for buttons.
@@ -583,8 +583,8 @@ video {
 .-ml-4 {
   margin-left: -1rem;
 }
-.mb-10 {
-  margin-bottom: 2.5rem;
+.mt-1 {
+  margin-top: 0.25rem;
 }
 .-ml-1 {
   margin-left: -0.25rem;
@@ -607,9 +607,6 @@ video {
 .-mt-4 {
   margin-top: -1rem;
 }
-.mt-1 {
-  margin-top: 0.25rem;
-}
 .block {
   display: block;
 }
@@ -621,6 +618,9 @@ video {
 }
 .inline-flex {
   display: inline-flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;
@@ -655,14 +655,14 @@ video {
 .h-full {
   height: 100%;
 }
+.h-8 {
+  height: 2rem;
+}
 .h-12 {
   height: 3rem;
 }
 .h-96 {
   height: 24rem;
-}
-.h-8 {
-  height: 2rem;
 }
 .h-64 {
   height: 16rem;
@@ -721,9 +721,6 @@ video {
 .w-20 {
   width: 5rem;
 }
-.w-16 {
-  width: 4rem;
-}
 .w-1\/2 {
   width: 50%;
 }
@@ -732,6 +729,9 @@ video {
 }
 .w-8\/12 {
   width: 66.666667%;
+}
+.w-96 {
+  width: 24rem;
 }
 .min-w-max {
   min-width: max-content;
@@ -830,11 +830,11 @@ video {
 .gap-8 {
   gap: 2rem;
 }
-.gap-3 {
-  gap: 0.75rem;
-}
 .gap-0 {
   gap: 0px;
+}
+.gap-3 {
+  gap: 0.75rem;
 }
 .gap-2 {
   gap: 0.5rem;
@@ -998,6 +998,14 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(228 229 229 / var(--tw-border-opacity));
 }
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(215 217 219 / var(--tw-border-opacity));
+}
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(166 172 176 / var(--tw-border-opacity));
+}
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1044,10 +1052,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 101 101 / var(--tw-bg-opacity));
-}
 .bg-blue-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 248 251 / var(--tw-bg-opacity));
@@ -1072,6 +1076,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 240 / var(--tw-bg-opacity));
 }
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 101 101 / var(--tw-bg-opacity));
+}
 .bg-green-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(110 174 159 / var(--tw-bg-opacity));
@@ -1081,6 +1089,9 @@ video {
 }
 .fill-green-100 {
   fill: #6fae9f;
+}
+.fill-gray-100 {
+  fill: #6a747c;
 }
 .object-cover {
   object-fit: cover;
@@ -1143,10 +1154,6 @@ video {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1154,6 +1161,10 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 .py-0 {
   padding-top: 0px;
@@ -1205,6 +1216,9 @@ video {
 .pt-16 {
   padding-top: 4rem;
 }
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
 .pr-20 {
   padding-right: 5rem;
 }
@@ -1222,9 +1236,6 @@ video {
 }
 .pl-5 {
   padding-left: 1.25rem;
-}
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 .pt-4 {
   padding-top: 1rem;
@@ -1261,13 +1272,13 @@ video {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -1329,10 +1340,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(245 101 101 / var(--tw-text-opacity));
-}
 .text-pink-100 {
   --tw-text-opacity: 1;
   color: rgb(255 113 94 / var(--tw-text-opacity));
@@ -1357,9 +1364,20 @@ video {
   --tw-text-opacity: 1;
   color: rgb(215 217 219 / var(--tw-text-opacity));
 }
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(245 101 101 / var(--tw-text-opacity));
+}
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(166 172 176 / var(--tw-text-opacity));
+}
 .text-red-50 {
   --tw-text-opacity: 1;
   color: rgb(255 112 94 / var(--tw-text-opacity));
+}
+.text-gray-500 {
+  color: ##4a4a4a;
 }
 .underline {
   text-decoration-line: underline;
@@ -1959,6 +1977,56 @@ img.nav-content-block__image {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+/* quantity break */
+.product-details__quantity-pricing {
+  overflow: auto;
+}
+.table--enhanced {
+  position: relative;
+  width: auto;
+  font-size: 12px;
+  background: #ffffff;
+  border: 1px solid #6a747c;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 4px;
+}
+.table--enhanced th {
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 500;
+  border-right: 1px solid #6a747c;
+}
+.table--enhanced td {
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+.table--enhanced tr:first-child th {
+  border-radius: 4px 0 0;
+}
+.table--enhanced tr:first-child::after {
+  border-bottom: transparent;
+}
+.table--enhanced tr::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #6a747c;
+  content: " ";
+}
+.table tr {
+  border-bottom: 1px solid #a6acb0;
+}
+.table tr:last-child {
+  border-bottom: transparent;
+}
+.table th {
+  padding: 8px;
+  font-weight: 700;
+  background: #f2f3f3;
+}
 .footer-bg {
   background-color: #cee1dc;
   color: #6a747c;
@@ -2035,7 +2103,7 @@ img.nav-content-block__image {
 }
 .hover\:text-gray-400:hover {
   --tw-text-opacity: 1;
-  color: rgb(79 79 79 / var(--tw-text-opacity));
+  color: rgb(166 172 176 / var(--tw-text-opacity));
 }
 .hover\:text-green-100:hover {
   --tw-text-opacity: 1;
@@ -2134,20 +2202,17 @@ img.nav-content-block__image {
   .md\:-mt-6 {
     margin-top: -1.5rem;
   }
-  .md\:mt-12 {
-    margin-top: 3rem;
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+  .md\:mb-1 {
+    margin-bottom: 0.25rem;
   }
   .md\:mb-0 {
     margin-bottom: 0px;
   }
   .md\:mb-24 {
     margin-bottom: 6rem;
-  }
-  .md\:mt-0 {
-    margin-top: 0px;
-  }
-  .md\:mb-1 {
-    margin-bottom: 0.25rem;
   }
   .md\:mt-auto {
     margin-top: auto;

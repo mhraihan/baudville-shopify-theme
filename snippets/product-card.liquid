@@ -40,10 +40,12 @@
           <span class="text-xs product-summary__video-link-text js-video-button" data-video-id="731044217" data-channel="vimeo">Watch this video</span>
         </button>
       </p>
-      <div class="pt-1 trustpilot-widget" data-businessunit-id="593eff810000ff0005a46e0a" data-locale="en-US" data-no-reviews="hide" data-scroll-to-list="true" data-sku="62227" data-star-color="#6EAE9F" data-style-height="24px" data-style-width="100%" data-template-id="577258fb31f02306e4e3aaf9" data-text-color="#6a747c" data-theme="light" style="position: relative;">
-        <iframe title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/577258fb31f02306e4e3aaf9/index.html?businessunitId=593eff810000ff0005a46e0a&amp;templateId=577258fb31f02306e4e3aaf9#locale=en-US&amp;noReviews=hide&amp;scrollToList=true&amp;sku=62227&amp;starColor=%236EAE9F&amp;styleHeight=24px&amp;styleWidth=100%25&amp;textColor=%236a747c&amp;theme=light" style="position: relative; height: 24px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe>
-        <iframe title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/577258fb31f02306e4e3aaf9/popup.html?businessunitId=593eff810000ff0005a46e0a&amp;templateId=577258fb31f02306e4e3aaf9#locale=en-US&amp;noReviews=hide&amp;scrollToList=true&amp;sku=62227&amp;starColor=%236EAE9F&amp;styleHeight=24px&amp;styleWidth=100%25&amp;textColor=%236a747c&amp;theme=light" style="position: absolute; z-index: 99; top: 25px; height: 202px; width: 100%; min-width: 120px; border-style: none; display: none; overflow: hidden;"></iframe>
-      </div>
+      {% if review %}
+        <div class="pt-1 trustpilot-widget" data-businessunit-id="593eff810000ff0005a46e0a" data-locale="en-US" data-no-reviews="hide" data-scroll-to-list="true" data-sku="62227" data-star-color="#6EAE9F" data-style-height="24px" data-style-width="100%" data-template-id="577258fb31f02306e4e3aaf9" data-text-color="#6a747c" data-theme="light" style="position: relative;">
+          <iframe title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/577258fb31f02306e4e3aaf9/index.html?businessunitId=593eff810000ff0005a46e0a&amp;templateId=577258fb31f02306e4e3aaf9#locale=en-US&amp;noReviews=hide&amp;scrollToList=true&amp;sku=62227&amp;starColor=%236EAE9F&amp;styleHeight=24px&amp;styleWidth=100%25&amp;textColor=%236a747c&amp;theme=light" style="position: relative; height: 24px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe>
+          <iframe title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/577258fb31f02306e4e3aaf9/popup.html?businessunitId=593eff810000ff0005a46e0a&amp;templateId=577258fb31f02306e4e3aaf9#locale=en-US&amp;noReviews=hide&amp;scrollToList=true&amp;sku=62227&amp;starColor=%236EAE9F&amp;styleHeight=24px&amp;styleWidth=100%25&amp;textColor=%236a747c&amp;theme=light" style="position: absolute; z-index: 99; top: 25px; height: 202px; width: 100%; min-width: 120px; border-style: none; display: none; overflow: hidden;"></iframe>
+        </div>
+      {% endif %}
     {% endif %}
 
   </div>

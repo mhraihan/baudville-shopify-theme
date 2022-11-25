@@ -730,9 +730,6 @@ video {
 .w-8\/12 {
   width: 66.666667%;
 }
-.w-96 {
-  width: 24rem;
-}
 .min-w-max {
   min-width: max-content;
 }
@@ -1340,6 +1337,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.text-gray-500 {
+  color: ##4a4a4a;
+}
 .text-pink-100 {
   --tw-text-opacity: 1;
   color: rgb(255 113 94 / var(--tw-text-opacity));
@@ -1375,9 +1375,6 @@ video {
 .text-red-50 {
   --tw-text-opacity: 1;
   color: rgb(255 112 94 / var(--tw-text-opacity));
-}
-.text-gray-500 {
-  color: ##4a4a4a;
 }
 .underline {
   text-decoration-line: underline;
@@ -1709,6 +1706,16 @@ h6 {
   font-family: "Bebas Neue", cursive;
   --tw-text-opacity: 1;
   color: rgb(106 116 124 / var(--tw-text-opacity));
+}
+.heading {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(110 174 159 / var(--tw-text-opacity));
+  font-family: "Bebas Neue", cursive;
+  font-size: 45px;
 }
 .main-menu {
   font-family: "Bebas Neue", cursive;

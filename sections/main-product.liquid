@@ -87,6 +87,7 @@
     </div>
 
     {% form 'product', product %}
+      <render-related-product :id="{{ product.id }}"></render-related-product>
       {% render 'quantity' %}
       <div class="flex items-end gap-4 mb-6">
         {% if current_variant.available %}

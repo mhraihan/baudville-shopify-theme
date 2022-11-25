@@ -184,6 +184,28 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n// r
 
 /***/ }),
 
+/***/ "./src/vue/components/render/related-product.vue":
+/*!*******************************************************!*\
+  !*** ./src/vue/components/render/related-product.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _related_product_vue_vue_type_template_id_4369fcca__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./related-product.vue?vue&type=template&id=4369fcca */ \"./src/vue/components/render/related-product.vue?vue&type=template&id=4369fcca\");\n/* harmony import */ var _related_product_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./related-product.vue?vue&type=script&lang=js */ \"./src/vue/components/render/related-product.vue?vue&type=script&lang=js\");\n/* harmony import */ var _Users_raihan_projects_shopify_baudville_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ \"./node_modules/vue-loader/dist/exportHelper.js\");\n\n\n\n\n;\nconst __exports__ = /*#__PURE__*/(0,_Users_raihan_projects_shopify_baudville_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_related_product_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], [['render',_related_product_vue_vue_type_template_id_4369fcca__WEBPACK_IMPORTED_MODULE_0__.render],['__file',\"src/vue/components/render/related-product.vue\"]])\n/* hot reload */\nif (false) {}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);\n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/render/related-product.vue?");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/related-product.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/related-product.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  props: {\n    url: {\n      type: String,\n      required: true,\n    },\n  },\n\n  setup(props, { slots }) {\n    const { url } = (0,vue__WEBPACK_IMPORTED_MODULE_0__.toRefs)(props);\n    // console.log(url);\n    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(() => {\n      fetch(url)\n        .then((response) => response.json())\n        .then(({ products }) => {\n          if (products.length > 0) {\n            const firstRecommendedProduct = products;\n            console.log(products);\n          }\n        });\n    });\n    return {\n      url,\n    };\n  },\n  mounted() {\n    console.log(this.url);\n\n    this.url = \"http://localhost\";\n  },\n});\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/render/related-product.vue?./node_modules/vue-loader/dist/index.js??ruleSet%5B1%5D.rules%5B7%5D.use%5B0%5D");
+
+/***/ }),
+
 /***/ "./src/vue/components/render/theme-slider.vue":
 /*!****************************************************!*\
   !*** ./src/vue/components/render/theme-slider.vue ***!
@@ -316,6 +338,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/vue/components/render/related-product.vue?vue&type=script&lang=js":
+/*!*******************************************************************************!*\
+  !*** ./src/vue/components/render/related-product.vue?vue&type=script&lang=js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* reexport safe */ _node_modules_vue_loader_dist_index_js_ruleSet_1_rules_7_use_0_related_product_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _node_modules_vue_loader_dist_index_js_ruleSet_1_rules_7_use_0_related_product_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./related-product.vue?vue&type=script&lang=js */ \"./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/related-product.vue?vue&type=script&lang=js\");\n \n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/render/related-product.vue?");
+
+/***/ }),
+
 /***/ "./src/vue/components/render/theme-slider.vue?vue&type=script&lang=js":
 /*!****************************************************************************!*\
   !*** ./src/vue/components/render/theme-slider.vue?vue&type=script&lang=js ***!
@@ -382,6 +415,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/vue/components/render/related-product.vue?vue&type=template&id=4369fcca":
+/*!*************************************************************************************!*\
+  !*** ./src/vue/components/render/related-product.vue?vue&type=template&id=4369fcca ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_1_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_7_use_0_related_product_vue_vue_type_template_id_4369fcca__WEBPACK_IMPORTED_MODULE_0__.render)\n/* harmony export */ });\n/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_1_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_7_use_0_related_product_vue_vue_type_template_id_4369fcca__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./related-product.vue?vue&type=template&id=4369fcca */ \"./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/related-product.vue?vue&type=template&id=4369fcca\");\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/render/related-product.vue?");
+
+/***/ }),
+
 /***/ "./src/vue/components/render/theme-slider.vue?vue&type=template&id=cf89ddf2":
 /*!**********************************************************************************!*\
   !*** ./src/vue/components/render/theme-slider.vue?vue&type=template&id=cf89ddf2 ***!
@@ -390,6 +434,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_1_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_7_use_0_theme_slider_vue_vue_type_template_id_cf89ddf2__WEBPACK_IMPORTED_MODULE_0__.render)\n/* harmony export */ });\n/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_1_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_7_use_0_theme_slider_vue_vue_type_template_id_cf89ddf2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./theme-slider.vue?vue&type=template&id=cf89ddf2 */ \"./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/theme-slider.vue?vue&type=template&id=cf89ddf2\");\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/render/theme-slider.vue?");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/related-product.vue?vue&type=template&id=4369fcca":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/related-product.vue?vue&type=template&id=4369fcca ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\n\nconst _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"h2\", null, \"Related\", -1 /* HOISTED */)\n\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [\n    _hoisted_1,\n    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"h2\", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.url), 1 /* TEXT */)\n  ], 64 /* STABLE_FRAGMENT */))\n}\n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/render/related-product.vue?./node_modules/vue-loader/dist/templateLoader.js??ruleSet%5B1%5D.rules%5B1%5D!./node_modules/vue-loader/dist/index.js??ruleSet%5B1%5D.rules%5B7%5D.use%5B0%5D");
 
 /***/ }),
 
@@ -443,7 +498,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var map = {\n\t\"./render/theme-slider.vue\": \"./src/vue/components/render/theme-slider.vue\",\n\t\"./renderless/addresses-switch.vue\": \"./src/vue/components/renderless/addresses-switch.vue\",\n\t\"./renderless/pagination-products.vue\": \"./src/vue/components/renderless/pagination-products.vue\",\n\t\"./renderless/product-gallery.vue\": \"./src/vue/components/renderless/product-gallery.vue\",\n\t\"./renderless/product-variant-selector.vue\": \"./src/vue/components/renderless/product-variant-selector.vue\",\n\t\"./renderless/template-switch.vue\": \"./src/vue/components/renderless/template-switch.vue\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/vue/components sync recursive \\\\.(vue%7Cjs)$\";\n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/_sync_\\.(vue%257Cjs)$?");
+eval("var map = {\n\t\"./render/related-product.vue\": \"./src/vue/components/render/related-product.vue\",\n\t\"./render/theme-slider.vue\": \"./src/vue/components/render/theme-slider.vue\",\n\t\"./renderless/addresses-switch.vue\": \"./src/vue/components/renderless/addresses-switch.vue\",\n\t\"./renderless/pagination-products.vue\": \"./src/vue/components/renderless/pagination-products.vue\",\n\t\"./renderless/product-gallery.vue\": \"./src/vue/components/renderless/product-gallery.vue\",\n\t\"./renderless/product-variant-selector.vue\": \"./src/vue/components/renderless/product-variant-selector.vue\",\n\t\"./renderless/template-switch.vue\": \"./src/vue/components/renderless/template-switch.vue\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/vue/components sync recursive \\\\.(vue%7Cjs)$\";\n\n//# sourceURL=webpack://shopify-theme-lab/./src/vue/components/_sync_\\.(vue%257Cjs)$?");
 
 /***/ }),
 

@@ -2224,6 +2224,9 @@ img.nav-content-block__image {
   .md\:mt-auto {
     margin-top: auto;
   }
+  .md\:mt-32 {
+    margin-top: 8rem;
+  }
   .md\:block {
     display: block;
   }

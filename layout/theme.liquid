@@ -86,20 +86,19 @@
 {%- endcapture -%}
 <body class="{{ body_classess }} min-h-screen">
   {% if request.page_type == 'captcha' %}
-    {% comment %}
-      fix: Shopify automatically inserts script tags on captcha pages into the content_for_layout tag
-        but vue removes any script tags on mount, so don't initialize the vue instance on captcha pages
-    {% endcomment %}
     {% render 'template-captcha' %}
   {% else %}
-    <div id="app" class="flex flex-col min-h-screen font-sans">
+    <div id="app-roots" class="flex flex-col min-h-screen font-sans">
       {% section 'header' %}
-      <main id="main" role="main" class="flex-1 pt-0 {% if request.page_type == 'index' %}md:pt-0{% else %}md:pt-0 pb-16 md:pb-32{% endif %}">
+      <main id="app" role="main" class="flex-1 pt-0">
         {%- unless template.name == 'product' -%}
           {% render 'breadcrumbs' %}
         {%- endunless -%}
         {{ content_for_layout }}
       </main>
+      {%- if template.name == 'product' -%}
+        {% section 'product-recommendations' %}
+      {%- endif -%}
       {% section 'footer' %}
     </div>
   {% endif %}

@@ -1,4 +1,6 @@
 <div class="container max-w-screen-xl ">
+  <pre>performed: {{ recommendations.performed }}</pre>
+  <pre>count: {{ recommendations.products }}</pre>
   <product-recommendations class="product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="text-center uppercase product-recommendations__heading heading">{{ section.settings.title | escape }}</h2>
@@ -38,6 +40,7 @@
             }
             console.log('featch complete');
             window.theme.modalVideo.init(0);
+            console.log(recommendations);
           }).catch(e => {
             console.error(e);
           });

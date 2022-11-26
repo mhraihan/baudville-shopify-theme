@@ -2242,6 +2242,9 @@ img.nav-content-block__image {
   .md\:mt-auto {
     margin-top: auto;
   }
+  .md\:mt-20 {
+    margin-top: 5rem;
+  }
   .md\:block {
     display: block;
   }

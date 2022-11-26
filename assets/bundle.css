@@ -2046,6 +2046,22 @@ img.nav-content-block__image {
   font-weight: 700;
   background: #f2f3f3;
 }
+figure.zoom {
+  background-position: 50% 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+figure.zoom img {
+  display: block;
+  width: 100%;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+}
+figure.zoom img:hover, figure.zoom img:focus, figure.zoom img:active {
+  opacity: 0;
+}
 .footer-bg {
   background-color: #cee1dc;
   color: #6a747c;

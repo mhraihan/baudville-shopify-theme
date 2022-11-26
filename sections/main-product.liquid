@@ -6,14 +6,14 @@
   </div>
 </div>
 <div class="container max-w-screen-xl grid md:grid-cols-2 gap-8">
-  <renderless-product-gallery v-slot="{ initialRender, currentImage, switchImage }">
+  <renderless-product-gallery :image="'{{ featured_image | image_url }}'" v-slot="{ initialRender, currentImage, switchImage,move, zoomImage }">
     <div>
-      <div>
+      <figure @mousemove="move($event)" class="zoom" :style="{ backgroundImage: `url(${zoomImage.url})` }">
         <img
           v-if="initialRender"
           src="{{ featured_image | img_url: '750x' }}"
           alt="{{ featured_image.alt | escape }}"
-          loading="lazy"
+          loading="egger"
           class="w-full h-auto object-cover object-center"
         >
        
@@ -22,12 +22,12 @@
             :src="currentImage.url"
             :key="currentImage.url"
             :alt="currentImage.alt"
-            loading="lazy"
+            loading="egger"
             class="w-full h-full object-cover object-center"
           >
         </div>
   
-      </div>
+      </figure>
 
       {% if  product.images.size > 1%}
         <div class="flex gap-4 mt-4">
@@ -36,6 +36,7 @@
 
             <button
               class="w-20 md:w-24 h-20 md:h-24"
+              data-zoom="{{ image.src | image_url }}"
               data-url="{{ image.src | img_url: '750x' }}"
               data-alt="{{ image.alt | escape }}"
               @click="switchImage"
@@ -51,7 +52,7 @@
                 "
                 src="{{ image.src | img_url: '96x' }}"
                 alt="{{ image.alt | escape }}"
-                loading="lazy"
+                loading="egger"
                 class="w-full h-full object-cover object-center pointer-events-none"
               >
             </button>

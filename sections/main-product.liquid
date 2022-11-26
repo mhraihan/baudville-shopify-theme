@@ -177,7 +177,7 @@
         </div>
       {% endif %}
     {% endform %}
-    {% render 'share' product: product%}
+    {% render 'share' share_title: product.title, share_permalink: product.url, share_image: product %}
   </div>
 </div>
 <div class="product-detail-container__description-container py-12 my-10 bg-blue-100" id="description">

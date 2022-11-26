@@ -1,6 +1,6 @@
 <ul class="flex items-center mt-4 share-buttons">
    <li class="mr-2 share-buttons__item">
-      <a class="share-buttons__button" title="Pin it on Pinterest" target="_blank"  href="https://pinterest.com/pin/create/button/?description=Check+out+Nor%27Easter+Hot+Chocolate+-+3pk+from+Baudville&amp;media=https%3A%2F%2Fs7d7.scene7.com%2Fis%2Fimage%2FBaudville%2FBV_95818_FRONT%3F%24line1%3D%26%24line2%3D%26%24line3%3D%26%24line4%3D%26%24line5%3D%26%24line6%3D%26%24linelp%3D%26layer%3D0%26hide%3D0%26color%3DF0F0F0%26layer%3D1%26hide%3D0%26layer%3D2%26hide%3D1%26layer%3D3%26op_colorize%3D0000FF%26hide%3D0%26layer%3D4%26hide%3D0%26op_colorize%3DFF0000%26layer%3D5%26hide%3D0%26op_colorize%3D00FF00%26%24bv_detail_wide_2x%24&amp;url={{ product.url }}">
+      <a class="share-buttons__button" title="Pin it on Pinterest" target="_blank"  href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | url_param_escape }}">
          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35" class="svg-icon svg-icon--font-color fill-gray-100">
             <defs>
                <path id="pinterest-a" d="M0 0h34.548v34.548H0z"></path>
@@ -15,7 +15,7 @@
       </a>
    </li>
    <li class="mr-2 share-buttons__item">
-      <a class="share-buttons__button" title="Tweet on Twitter" target="_blank"  href="https://twitter.com/intent/tweet?text={{ product.title | escape }}&amp;url={{ product.url }}">
+      <a class="share-buttons__button" title="Tweet on Twitter" target="_blank"  href="//twitter.com/share?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: share_permalink }}">
          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="35" viewBox="0 0 36 35" class="svg-icon svg-icon--font-color fill-gray-100">
             <defs>
                <path id="twitter-a" d="M0 0h34.548v34.548H0z"></path>
@@ -30,14 +30,14 @@
       </a>
    </li>
    <li class="mr-2 share-buttons__item">
-      <a class="share-buttons__button" title="Share on Facebook" target="_blank"  href="https://www.facebook.com/sharer/sharer.php?u={{ product.url }}">
+      <a class="share-buttons__button" title="Share on Facebook" target="_blank"  href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}">
          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" class="svg-icon svg-icon--font-color fill-gray-100">
             <path d="M21.848 17.202h-2.991V27.87h-4.435V17.202h-2.108v-3.766h2.108v-2.44c0-1.748.83-4.474 4.475-4.474l3.283.012v3.659h-2.384c-.389 0-.94.194-.94 1.025v2.218h3.38l-.388 3.766zM17.275 0C7.735 0 0 7.736 0 17.275c0 9.54 7.735 17.274 17.275 17.274s17.274-7.734 17.274-17.274C34.55 7.735 26.815 0 17.275 0z"></path>
          </svg>
       </a>
    </li>
    <li class="share-buttons__item">
-      <a class="share-buttons__button" rel="nofollow" title="Share by Email"  href="/shares/new?title={{ product.title | escape }}&amp;url={{ product.url }}">
+      <a class="share-buttons__button" rel="nofollow" title="Share by Email" target="_blank" href="mailto:{{ shop.url }}&body=/shares/new?title={{ share_title | escape }}&amp;url={{ shop.url | append: share_permalink }}&subject={{ share_title | escape }}">
          <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" height="24" viewBox="0 0 24 24" width="24" class="svg-icon svg-icon--font-color fill-gray-100">
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"></path>

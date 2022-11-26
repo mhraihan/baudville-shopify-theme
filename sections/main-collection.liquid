@@ -51,7 +51,7 @@
         {% render 'layout-pagination', paginate: paginate %}
       {%- endcomment -%}
       {% if paginate.pages > 1 %}
-        <renderless-pagination-products :pages="{{ paginate.pages }}" :current="{{ paginate.current_page }}" :limit="{{ limit }}" :handle="'{{ collection.handle }}'" :target="'.collection-products'" :url="'{{  collection.url }}'" v-slot="{ loadMore, text, show }">
+        <renderless-pagination-products :pages="{{ paginate.pages }}" :current="{{ paginate.current_page }}" :limit="{{ limit }}"  :target="'.collection-products'" :url="'{{  collection.url }}'" v-slot="{ loadMore, text, show }">
           <div v-if="show.value" class="flex items-center justify-center pagination">
             <button v-if="text.value" @click="loadMore" class="px-10 py-5 mt-10 tracking-widest text-white uppercase button font-bn bg-red-50 hover:bg-red-500" v-html="text.value"></button>
           </div>

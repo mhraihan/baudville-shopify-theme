@@ -2,7 +2,13 @@
   "sections": {
     "main": {
       "type": "main-product"
+    },
+    "product-recommendations": {
+      "type": "product-recommendations"
+    },
+    "product-recent-view": {
+      "type": "product-recent-view"
     }
   },
-  "order": ["main"]
+  "order": ["main", "product-recommendations", "product-recent-view"]
 }

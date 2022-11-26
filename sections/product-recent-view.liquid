@@ -1,0 +1,23 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+<render-recent-view-product 
+  :id="{{ product.id }}"
+  :href="'{{ product.url | within: collection }}'" 
+  :image="'{{ featured_image | image_url: width: 600, height: 600}}'" 
+  :title="'{{ product.title | escape }}'"
+  :sku="'{{ current_variant.sku }}'"
+  :compare="'{{ current_variant.compare_at_price | money }}'"
+  :price="'{{ current_variant.price | money }}'"
+  :date="'{{ product.created_at }}'"
+>
+</render-recent-view-product>
+{% schema %}
+  {
+    "name": "Recently view Product",
+    "tag": "section",
+    "class": "recent-view-section",
+    "settings": [
+     
+    ]
+  }
+{% endschema %}

@@ -96,9 +96,6 @@
         {%- endunless -%}
         {{ content_for_layout }}
       </main>
-      {%- if template.name == 'product' -%}
-        {% section 'product-recommendations' %}
-      {%- endif -%}
       {% section 'footer' %}
     </div>
   {% endif %}

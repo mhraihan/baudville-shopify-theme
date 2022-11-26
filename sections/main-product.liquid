@@ -87,7 +87,7 @@
     </div>
 
     {% form 'product', product %}
-      <render-related-product :id="{{ product.id }}"></render-related-product>
+      <render-available-options :id="{{ product.id }}"></render-available-options>
       {% render 'quantity' %}
       <div class="flex items-end gap-4 mb-6">
         {% if current_variant.available %}
@@ -208,14 +208,3 @@
 </div>
 
 
-<render-recent-view-product 
-  :id="{{ product.id }}"
-  :href="'{{ product.url | within: collection }}'" 
-  :image="'{{ featured_image | image_url: width: 600, height: 600}}'" 
-  :title="'{{ product.title | escape }}'"
-  :sku="'{{ current_variant.sku }}'"
-  :compare="'{{ current_variant.compare_at_price | money }}'"
-  :price="'{{ current_variant.price | money }}'"
-  :date="'{{ product.created_at }}'"
->
-</render-recent-view-product>

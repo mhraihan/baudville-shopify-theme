@@ -3,7 +3,7 @@
 {%- endcomment -%}
 <div class=" {% if request.page_type == 'index' %}md:mt-0{% else %} mt-16 md:mt-32{% endif %} py-10 text-sm footer-bg footer-top">
   <div class="container">
-    <div class="flex">
+    <div class="flex justify-between">
       <div class="flex {% if section.settings.newsletter != blank %} w-7/12 {% else %} w-full {% endif %} -mx-4">
 
         {%- for block in section.blocks -%}

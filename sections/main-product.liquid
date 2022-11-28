@@ -5,29 +5,33 @@
     {% render 'breadcrumbs' %}
   </div>
 </div>
-<div class="container max-w-screen-xl grid md:grid-cols-2 gap-8">
+<div class="container max-w-screen-xl grid md:grid-cols-2 gap-8 product-main">
   <renderless-product-gallery :image="'{{ featured_image | image_url }}'" v-slot="{ initialRender, currentImage, switchImage,move, zoomImage }">
     <div>
-      <figure @mousemove="move($event)" class="zoom" :style="{ backgroundImage: `url(${zoomImage.url})` }">
+      <figure  v-if="initialRender" @mousemove="move($event)" class="zoom" style="background-image: url('{{ featured_image | image_url}}')">
         <img
+          data-width="{{ featured_image.width }}"
+          data-height="{{ featured_image.height }}"
           v-if="initialRender"
           src="{{ featured_image | img_url: '750x' }}"
           alt="{{ featured_image.alt | escape }}"
           loading="egger"
-          class="w-full h-auto object-cover object-center"
+          class="w-full h-auto object-cover object-center main-product-image"
         >
-       
+        </figure>
           <div v-else>
-          <img
-            :src="currentImage.url"
-            :key="currentImage.url"
-            :alt="currentImage.alt"
-            loading="egger"
-            class="w-full h-full object-cover object-center"
-          >
+            <figure @mousemove="move($event)" :class="zoomImage.url ? 'zoom' : 'zoom-none'" :style="{ backgroundImage: `url(${zoomImage.url})` }">
+              <img
+                :src="currentImage.url"
+                :key="currentImage.url"
+                :alt="currentImage.alt"
+                loading="egger"
+                class="w-full h-full object-cover object-center">
+
+            </figure>
         </div>
   
-      </figure>
+     
 
       {% if  product.images.size > 1%}
         <div class="flex gap-4 mt-4">
@@ -35,11 +39,12 @@
             <link rel="preload" as="image" href="{{ image.src | img_url: '750x' }}">
 
             <button
-              class="w-20 md:w-24 h-20 md:h-24"
+              class="w-20 md:w-24 h-20 md:h-24 thumb-image"
               data-zoom="{{ image.src | image_url }}"
               data-url="{{ image.src | img_url: '750x' }}"
               data-alt="{{ image.alt | escape }}"
               @click="switchImage"
+            
             >
               <img
                 sizes="

@@ -83,7 +83,7 @@
     <div class="mb-4 pb-2 border-b border-gray-300">
       {% if current_variant.available %}
         <div class="mt-1 mb-0">
-        {% render 'price' cv: current_variant %}
+        {% render 'price', cv: current_variant, is_review: true %}
         </div>
       {% else %}
         <div class="mb-6">
@@ -213,4 +213,4 @@
   </div>
 </div>
 
-
+{% render 'review' product: product %}

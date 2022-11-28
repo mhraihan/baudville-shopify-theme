@@ -608,14 +608,14 @@ video {
 .ml-2{
   margin-left: 0.5rem;
 }
+.mb-10{
+  margin-bottom: 2.5rem;
+}
 .mb-20{
   margin-bottom: 5rem;
 }
 .-mt-4{
   margin-top: -1rem;
-}
-.mb-10{
-  margin-bottom: 2.5rem;
 }
 .block{
   display: block;
@@ -1822,6 +1822,9 @@ html.remodal-is-locked {
   }
 }
 .show-loader.opened .icon-loader{
+  display: none;
+}
+.show-loader .trustpilot-widget {
   display: none;
 }
 [v-cloak] {

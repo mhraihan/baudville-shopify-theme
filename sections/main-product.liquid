@@ -33,13 +33,13 @@
   
      
 
-      {% if  product.images.size > 1%}
+      {% if  product.images.size > 0%}
         <div class="flex gap-4 mt-4">
           {% for image in product.images %}
             <link rel="preload" as="image" href="{{ image.src | img_url: '750x' }}">
 
             <button
-              class="w-20 md:w-24 h-20 md:h-24 thumb-image"
+              class="w-20 md:w-24 h-20 md:h-24 thumb-image {% if forloop.first %} pointer-events-none {% endif %}"
               data-zoom="{{ image.src | image_url }}"
               data-url="{{ image.src | img_url: '750x' }}"
               data-alt="{{ image.alt | escape }}"

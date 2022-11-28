@@ -12,7 +12,7 @@ window.theme = {
       $(".button--quickview").on("click", function (event) {
         event.preventDefault();
         const url = $(this).data("url");
-        console.log(url);
+
         window.theme.remodal.open();
         window.jQuery.ajax({
           url: url,
@@ -40,6 +40,10 @@ window.theme = {
       $(".show-loader .thumb-image").off("click");
       $(".show-loader .thumb-image").on("click", function () {
         const el = $(".show-loader .main-product-image");
+        $(this)
+          .addClass("pointer-events-none")
+          .siblings(".thumb-image")
+          .removeClass("pointer-events-none");
         $(el)
           .attr("src", $(this).data("url"))
           .attr("alt", $(this).data("alt"))

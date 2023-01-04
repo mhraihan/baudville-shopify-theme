@@ -5,10 +5,10 @@
       <ul class="grid collection-products related-collection-products sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6" role="list">
         {% for recommendation in recommendations.products %}
           {% render 'product-card',
-            product_card: recommendation,
-           index: forloop.index,
-           review: false
-          %}
+ product_card: recommendation,
+ index: forloop.index,
+ review: false
+ %}
 
         {% endfor %}
       </ul>

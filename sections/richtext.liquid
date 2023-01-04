@@ -2,13 +2,13 @@
   <div class="py-{{ section.settings.py }} text-center ">
     <div class="container">
       <div class="mb-0">
-        {%- if section.settings.title != blank-%}
+        {%- if section.settings.title != blank -%}
           <h2 class="mb-4 text-5xl font-bold text-pink-100">
             {{ section.settings.title | escape }}
           </h2>
         {%- endif -%}
 
-        {%- if section.settings.text != blank-%}
+        {%- if section.settings.text != blank -%}
           <div class="richtext-area">
             {{ section.settings.text }}
           </div>
@@ -19,38 +19,41 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Richtext",
-    "class": "mh-richtext-section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Celebrate The Moments That Matter"
-      }, {
-        "type": "richtext",
-        "id": "text",
-        "label": "richtext Text",
-        "default": "<p>Finding the right gift to boost employee engagement is more important than ever. From celebratory</p>"
-      }, {
-        "type": "header",
-        "content": "Adjust padding"
-      }, {
-        "type": "range",
-        "label": "Padding Top/Botom",
-        "id": "py",
-        "min": 0,
-        "max": 96,
-        "step": 1,
-        "default": 10
-      }
-    ],
-    "presets": [
-      {
-        "name": "Richtext",
-        "category": "Text"
-      }
-    ]
-  }
+{
+  "name": "Richtext",
+  "class": "mh-richtext-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Celebrate The Moments That Matter"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "richtext Text",
+      "default": "<p>Finding the right gift to boost employee engagement is more important than ever. From celebratory</p>"
+    },
+    {
+      "type": "header",
+      "content": "Adjust padding"
+    },
+    {
+      "type": "range",
+      "label": "Padding Top/Botom",
+      "id": "py",
+      "min": 0,
+      "max": 96,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Richtext",
+      "category": "Text"
+    }
+  ]
+}
 {% endschema %}

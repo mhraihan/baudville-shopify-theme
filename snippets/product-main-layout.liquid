@@ -1,0 +1,177 @@
+<div class="container grid max-w-screen-xl gap-8 md:grid-cols-2 product-main">
+  <renderless-product-gallery :image="'{{ featured_image | image_url }}'" v-slot="{ initialRender, currentImage, switchImage,move, zoomImage }">
+    <div>
+      <figure
+        v-if="initialRender"
+        @mousemove="move($event)"
+        class="zoom"
+        style="background-image: url('{{ featured_image | image_url}}')">
+        <img
+          data-width="{{ featured_image.width }}"
+          data-height="{{ featured_image.height }}"
+          v-if="initialRender"
+          src="{{ featured_image | img_url: '750x' }}"
+          alt="{{ featured_image.alt | escape }}"
+          loading="egger"
+          class="object-cover object-center w-full h-auto main-product-image">
+      </figure>
+      <div v-else>
+        <figure
+          @mousemove="move($event)"
+          :class="zoomImage.url ? 'zoom' : 'zoom-none'"
+          :style="{ backgroundImage: `url(${zoomImage.url})` }">
+          <img
+            :src="currentImage.url"
+            :key="currentImage.url"
+            :alt="currentImage.alt"
+            loading="egger"
+            class="object-cover object-center w-full h-full">
+
+        </figure>
+      </div>
+
+
+
+      {% if product.images.size > 0 %}
+        <div class="flex gap-4 mt-4">
+          {% for image in product.images %}
+            <link
+              rel="preload"
+              as="image"
+              href="{{ image.src | img_url: '750x' }}">
+
+            <button
+              class="w-20 md:w-24 h-20 md:h-24 thumb-image {% if forloop.first %} pointer-events-none {% endif %}"
+              data-zoom="{{ image.src | image_url }}"
+              data-url="{{ image.src | img_url: '750x' }}"
+              data-alt="{{ image.alt | escape }}"
+              @click="switchImage">
+              <img
+                sizes="(min-width: 768px) 96px,80px"
+                srcset="{{ image.src | img_url: '80x' }} 80w,{{ image.src | img_url: '96x' }} 96w"
+                src="{{ image.src | img_url: '96x' }}"
+                alt="{{ image.alt | escape }}"
+                loading="egger"
+                class="object-cover object-center w-full h-full pointer-events-none">
+            </button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </renderless-product-gallery>
+
+  <div class="md:mt-0">
+    {% if product.title %}
+      <h1 class="mb-4 text-2xl font-bold normal-case font-mont md:mb-1 ">
+        {% render 'badge', time: product.created_at, font: 'text-2xl' %}
+        {{ product.title }}
+      </h1>
+    {% endif %}
+
+    {% if current_variant.sku != blank %}
+      <div class="py-2 text-base  product-summary__id" itemprop="productID">
+        # {{ current_variant.sku }}
+      </div>
+    {% endif %}
+    <div class="pb-2 mb-4 border-b border-gray-300">
+      {% if current_variant.available %}
+        <div class="mt-1 mb-0">
+          {% render 'price', cv: current_variant, is_review: true %}
+        </div>
+      {% else %}
+        <div class="mb-6">
+          {{ 'common.sold_out' | t }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% form 'product', product %}
+      <render-available-options :id="{{ product.id }}"></render-available-options>
+      {% render 'quantity' %}
+      <div class="flex items-end gap-4 mb-6">
+        {% if current_variant.available %}
+          <div class="flex items-center mt-4">
+            <label for="input-quantity" class="mr-1 text-gray-500 qty">Qty</label>
+            <input
+              type="number"
+              name="quantity"
+              value="1"
+              id="input-quantity"
+              min="1"
+              pattern="[0-9]*"
+              class="w-20 h-8 px-2 ml-1 text-xl text-center border border-gray-400 rounded font-bn">
+          </div>
+        {% endif %}
+
+        {% if product.has_only_default_variant %}
+          <input
+            name="id"
+            type="hidden"
+            :value="{{ current_variant.id }}"
+            readonly>
+        {% else %}
+          <div class="flex-1">
+            <renderless-product-variant-selector
+              v-slot="{ selectedVariant, selectOption }"
+              :current-variant="{{ current_variant | json | replace: '"', "'" }}"
+              :product-options="{{ product.options_with_values | json | replace: '"', "'" }}"
+              :product-variants="{{ product.variants | json | replace: '"', "'" }}">
+              <div>
+                <input
+                  name="id"
+                  type="hidden"
+                  :value="selectedVariant.id"
+                  readonly>
+
+                <div class="flex gap-x-3">
+                  {% for option in product.options_with_values %}
+                    <div class="flex-1">
+                      <label for="product-select-option-{{ forloop.index }}">
+                        {{ option.name | escape }}
+                      </label>
+
+                      <select
+                        id="product-select-{{ forloop.index }}"
+                        class="w-full h-12 p-2 border"
+                        @change="selectOption({
+                                                    name: '{{ option.name }}'
+                                                  }, $event)">
+                        {% for value in option.values %}
+                          <option value="{{ value }}" {% if option.selected_value == value %}selected{% endif %}>
+                            {{ value | escape }}
+                          </option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </renderless-product-variant-selector>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if current_variant.available %}
+        <div class="grid grid-cols-2 gap-4">
+          {% if product.metafields.custom.json != blank %}
+            <div class="w-full my-4">
+              <button name="add" class="button button--full button-product font-bn">
+                Personalize It
+              </button>
+            </div>
+          {% else %}
+            <div class="w-full">
+              <button name="add" class="button button--full button-product font-bn ">
+                {{ 'action.add_to_cart' | t }}
+              </button>
+            </div>
+          {% endif %}
+        </div>
+        <div class="mt-4 stock-alert">
+          <p>In Stock and ready to ship!</p>
+        </div>
+      {% endif %}
+    {% endform %}
+    {% render 'share' share_title: product.title, share_permalink: product.url, share_image: product %}
+  </div>
+</div>

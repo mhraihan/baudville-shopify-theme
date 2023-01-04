@@ -88,7 +88,7 @@
   {% if request.page_type == 'captcha' %}
     {% render 'template-captcha' %}
   {% else %}
-    <div id="app-roots" class="flex flex-col min-h-screen font-sans">
+    <div id="app-roots" class="flex flex-col min-h-screen font-mont">
       {% section 'header' %}
       <main id="app" role="main" class="flex-1 pt-0">
         {%- unless template.name == 'product' -%}

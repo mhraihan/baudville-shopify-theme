@@ -20,33 +20,35 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Trustpilot Review",
-    "class": "mh-review-section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Customer Reviews"
-      }, {
-        "type": "header",
-        "content": "Adjust padding"
-      }, {
-        "type": "range",
-        "label": "Padding Top/Botom",
-        "id": "py",
-        "min": 0,
-        "max": 96,
-        "step": 1,
-        "default": 10
-      }
-    ],
-    "presets": [
-      {
-        "name": "Trustpilot Review",
-        "category": "Review"
-      }
-    ]
-  }
+{
+  "name": "Trustpilot Review",
+  "class": "mh-review-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "header",
+      "content": "Adjust padding"
+    },
+    {
+      "type": "range",
+      "label": "Padding Top/Botom",
+      "id": "py",
+      "min": 0,
+      "max": 96,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trustpilot Review",
+      "category": "Review"
+    }
+  ]
+}
 {% endschema %}

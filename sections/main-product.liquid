@@ -7,7 +7,7 @@
   </div>
 </div>
 {% render 'product-main-layout' product: product, featured_image: featured_image, current_variant: current_variant %}
-<render-personalize-it :image="'{{ featured_image | image_url }}'" :variant="{{ current_variant | json | replace: '"', "'" }}"></render-personalize-it>
+
 <div class="py-12 my-10 bg-blue-100 product-detail-container__description-container" id="description">
   <div class="container grid max-w-screen-xl gap-0 md:grid-cols-2">
     <div class="pr-20 mb-4 border-r-4 border-white">

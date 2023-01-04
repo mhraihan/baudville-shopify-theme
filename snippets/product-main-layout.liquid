@@ -1,3 +1,4 @@
+{% assign page = product.metafields.custom.customizer_page %}
 <div class="container grid max-w-screen-xl gap-8 md:grid-cols-2 product-main">
   <renderless-product-gallery :image="'{{ featured_image | image_url }}'" v-slot="{ initialRender, currentImage, switchImage,move, zoomImage }">
     <div>
@@ -133,9 +134,7 @@
                       <select
                         id="product-select-{{ forloop.index }}"
                         class="w-full h-12 p-2 border"
-                        @change="selectOption({
-                                                    name: '{{ option.name }}'
-                                                  }, $event)">
+                        @change="selectOption({name: '{{ option.name }}'}, $event)">
                         {% for value in option.values %}
                           <option value="{{ value }}" {% if option.selected_value == value %}selected{% endif %}>
                             {{ value | escape }}
@@ -153,11 +152,11 @@
 
       {% if current_variant.available %}
         <div class="grid grid-cols-2 gap-4">
-          {% if product.metafields.custom.json != blank %}
+          {% if product.metafields.custom.json != blank and page.value.url %}
             <div class="w-full my-4">
-              <button name="add" class="button button--full button-product font-bn">
+              <a href="{{ page.value.url  }}" name="add" class="button button--full button-product font-bn !flex justify-center items-center">
                 Personalize It
-              </button>
+              </a>
             </div>
           {% else %}
             <div class="w-full">

@@ -1,34 +1,34 @@
-{% assign product = page.metafields.custom.customizer_product %}
-{% assign current_variant = product.value.selected_or_first_available_variant %}
-{% assign featured_image = current_variant.featured_image | default: product.value.featured_image %}
+{% assign product = page.metafields.custom.customizer_product.value %}
+        {% assign current_variant = product.selected_or_first_available_variant %}
+        {% assign featured_image = current_variant.featured_image | default: product.value.featured_image %}
 
 
-<render-personalize-it :image="'{{ featured_image | image_url }}'" :variant="{{ current_variant | json | replace: '"', "'" }}"></render-personalize-it>
+        <render-personalize-it :image="'{{ featured_image | image_url }}'" :variant="{{ current_variant | json | replace: '"', "'" }}"></render-personalize-it>
 
 
-<div class="py-12 my-10 bg-blue-100 product-detail-container__description-container" id="description">
-  <div class="container grid max-w-screen-xl gap-0 md:grid-cols-2">
-    <div class="pr-20 mb-4 border-r-4 border-white">
-      <h2 class="mb-2 text-2xl font-bold">Product Description</h2>
-      <div class="product-detail-container__body" itemprop="description">
-        {{ product.description }}
-      </div>
-    </div>
-    <div class="pl-20 -ml-1 border-l-4 border-white">
-      <h2 class="mb-2 text-2xl font-bold">Details &amp; Specifications</h2>
-      <div class="product-detail-container__body">
-        <ul>
-          <li>Add a touch of elegance to your gift giving!</li>
-          <li>Personalization included in the price!</li>
-          <li>Fits perfectly on any desktop</li>
-          <li>Comes gift boxed</li>
-          <li>Material: Marble</li>
-          <li>Package Description: Gift Box</li>
-          <li>Weight: 10.8 OZ</li>
-          <li>Package Size: Each</li>
-          <li>Dimensions: 4" x 2.75"</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="py-12 my-10 bg-blue-100 product-detail-container__description-container" id="description">
+          <div class="container grid max-w-screen-xl gap-0 md:grid-cols-2">
+            <div class="pr-20 mb-4 border-r-4 border-white">
+              <h2 class="mb-2 text-2xl font-bold">Product Description</h2>
+              <div class="product-detail-container__body" itemprop="description">
+                {{ product.description }}
+              </div>
+            </div>
+            <div class="pl-20 -ml-1 border-l-4 border-white">
+              <h2 class="mb-2 text-2xl font-bold">Details &amp; Specifications</h2>
+              <div class="product-detail-container__body">
+                <ul>
+                  <li>Add a touch of elegance to your gift giving!</li>
+                  <li>Personalization included in the price!</li>
+                  <li>Fits perfectly on any desktop</li>
+                  <li>Comes gift boxed</li>
+                  <li>Material: Marble</li>
+                  <li>Package Description: Gift Box</li>
+                  <li>Weight: 10.8 OZ</li>
+                  <li>Package Size: Each</li>
+                  <li>Dimensions: 4" x 2.75"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>

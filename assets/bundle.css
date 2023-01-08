@@ -845,6 +845,9 @@ video {
 .columns-2{
   columns: 2;
 }
+.grid-cols-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -990,6 +993,9 @@ video {
 }
 .rounded-full{
   border-radius: 9999px;
+}
+.\!rounded{
+  border-radius: 0.25rem !important;
 }
 .rounded-t{
   border-top-left-radius: 0.25rem;
@@ -1195,14 +1201,14 @@ video {
 .p-0{
   padding: 0px;
 }
+.p-1{
+  padding: 0.25rem;
+}
 .p-7{
   padding: 1.75rem;
 }
 .p-3{
   padding: 0.75rem;
-}
-.p-1{
-  padding: 0.25rem;
 }
 .p-6{
   padding: 1.5rem;
